@@ -51,6 +51,7 @@ public class Login {
 					setPassword_correcta(true);
 					System.out.println("Pasar a la siguiente ventana");
 					label_password_incorrecta.setVisible(false);
+					Frame_Login.getFrame().dispose();
 				}
 				else {
 					setPassword_correcta(false);

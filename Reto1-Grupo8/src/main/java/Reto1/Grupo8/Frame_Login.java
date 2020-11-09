@@ -27,8 +27,18 @@ public class Frame_Login extends JFrame {
 	private static JTextField jtf_usuario;
 	private static JPasswordField jtf_password;
 	private final Action boton_entrar = new SwingAction();
-
+	private static Frame_Login frame;
 	
+	
+	
+	public static Frame_Login getFrame() {
+		return frame;
+	}
+
+	public static void setFrame(Frame_Login frame) {
+		Frame_Login.frame = frame;
+	}
+
 	public static JLabel getLabel_usuario_no_existe() {
 		return label_usuario_no_existe;
 	}
@@ -72,7 +82,8 @@ public class Frame_Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame_Login frame = new Frame_Login();
+					frame = new Frame_Login();
+					setFrame(frame); //Para poder acceder a la ventana desde otras clases
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
