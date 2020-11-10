@@ -14,6 +14,7 @@ public class TestLogin {
 	private static JLabel label_password_incorrecta;
 	private static boolean usuario_existe, password_correcta;
 	boolean resultado_password_correcta, resulado_usuario_existe;
+	
 	@Test
 	public void testValidarCampos() {
 		usuarioRecogido = "admin"; 	// Emulo lo que recogería el getText para poder testearlo
@@ -26,6 +27,14 @@ public class TestLogin {
 		org.junit.Assert.assertEquals(resultado_password_correcta, Login.isPassword_correcta());
 		org.junit.Assert.assertEquals(resulado_usuario_existe, Login.isUsuario_existe());
 
+	}
+	
+	@Test
+	public void testIsPasswordCorrecta() {
+		Login.setPassword_correcta(true);
+		assertEquals(true, Login.isUsuario_existe());
+	
+		
 	}
 
 }

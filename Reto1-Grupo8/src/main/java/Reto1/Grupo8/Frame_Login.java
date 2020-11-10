@@ -55,9 +55,7 @@ public class Frame_Login extends JFrame {
 		Frame_Login.label_password_incorrecta = label_password_incorrecta;
 	}
 
-	public Action getBoton_entrar() {
-		return boton_entrar;
-	}
+
 
 	public static JTextField getJtf_usuario() {
 		return jtf_usuario;

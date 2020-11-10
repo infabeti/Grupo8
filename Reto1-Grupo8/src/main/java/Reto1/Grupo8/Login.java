@@ -10,7 +10,7 @@ public class Login {
 	private static String passwordRecogida = Frame_Login.getJtf_password().getText();
 	private static JLabel label_usuario_no_existe = Frame_Login.getLabel_usuario_no_existe();
 	private static JLabel label_password_incorrecta = Frame_Login.getLabel_password_incorrecta();
-	private static boolean usuario_existe, password_correcta;
+	public static boolean usuario_existe, password_correcta;
 	
 	
 	
