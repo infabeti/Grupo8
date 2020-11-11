@@ -6,6 +6,9 @@ public class Bienvenida {
 	public static Timer tiempo;
 	public static boolean iniciar_login, parar_timer ;
 	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public static void pasar_a_login() {
 		System.out.println("el método funciona");
 		//temporizador para cambiar de ventana
