@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package ventanas;
 
 import java.awt.EventQueue;
 
@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.Color;
 
-public class Generos {
+public class Frame_Generos {
 
 	private JFrame frame;
 	private JTextField peliculasVistasSabado;
@@ -46,7 +46,7 @@ public class Generos {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Generos window = new Generos();
+					Frame_Generos window = new Frame_Generos();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,7 +56,7 @@ public class Generos {
 	}
 
 	
-	public Generos() {
+	public Frame_Generos() {
 		initialize();
 	}
 

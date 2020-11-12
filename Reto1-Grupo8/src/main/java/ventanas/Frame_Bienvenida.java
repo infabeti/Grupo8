@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package ventanas;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -10,6 +10,9 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.Timer;
+
+import funciones.Bienvenida;
+
 import java.awt.event.*;
 public class Frame_Bienvenida {
 	private static JFrame frmBienvenida;

@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 
 import org.junit.Test;
 
+import funciones.Login;
+import ventanas.Frame_Login;
+
 public class TestLogin {
 
 	private static String usuarioRecogido;

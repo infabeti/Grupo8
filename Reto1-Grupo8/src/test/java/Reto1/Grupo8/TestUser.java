@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import funciones.User;
+
 public class TestUser {
 	private User administrador;
 	private String user, password;

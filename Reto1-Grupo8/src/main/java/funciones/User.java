@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package funciones;
 
 import java.util.ArrayList;
 

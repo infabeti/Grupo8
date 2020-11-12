@@ -1,6 +1,9 @@
 package Reto1.Grupo8;
 
 import org.junit.jupiter.api.Test;
+
+import funciones.Bienvenida;
+
 import static org.junit.Assert.*;
 
 class TestBienvenida {

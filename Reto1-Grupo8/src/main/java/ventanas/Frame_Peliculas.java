@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -34,7 +34,7 @@ public class Frame_Peliculas extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame_Peliculas frame = new Frame_Peliculas("Terror");
+					Frame_Peliculas frame = new Frame_Peliculas("Drama");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -66,7 +66,8 @@ public class Frame_Peliculas extends JFrame {
 			
 			JButton btn_handia = new JButton("Handia: 1h 56 min.");
 			btn_handia.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+				public void actionPerformed(ActionEvent arg0){
+					System.out.println(((JButton) arg0.getSource()).getText());
 				}
 			});
 			
@@ -247,7 +248,7 @@ public class Frame_Peliculas extends JFrame {
 		}
 		/////////////////////////////////////////////////////
 		//SI EL GÉNERO ES TERROR
-		//if(genero.equals("Terror")) {
+		if(genero.equals("Terror")) {
 			JLabel lb_titulo_drama_1_1 = new JLabel("Terror");
 			lb_titulo_drama_1_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
@@ -306,7 +307,7 @@ public class Frame_Peliculas extends JFrame {
 						.addContainerGap(32, Short.MAX_VALUE))
 			);
 			contentPane.setLayout(gl_contentPane);
-		//}
+		}
 		
 	}
 }

@@ -1,8 +1,10 @@
-package Reto1.Grupo8;
+package funciones;
 
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+
+import ventanas.Frame_Login;
 
 public class Login {
 	

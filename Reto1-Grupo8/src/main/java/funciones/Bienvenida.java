@@ -1,6 +1,9 @@
-package Reto1.Grupo8;
+package funciones;
 
 import javax.swing.Timer;
+
+import ventanas.Frame_Bienvenida;
+import ventanas.Frame_Login;
 
 public class Bienvenida {
 	public static Timer tiempo;

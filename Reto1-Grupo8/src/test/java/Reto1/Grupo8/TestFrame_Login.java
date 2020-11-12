@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 
 import org.junit.Test;
 
+import funciones.User;
+import ventanas.Frame_Login;
+
 public class TestFrame_Login {
 
 	private String usuarioRecogido, passwordRecogida;
