@@ -78,18 +78,22 @@ public class Frame_Peliculas extends JFrame {
 			JButton btn_lista_sindler = new JButton("La lista de Schindler: 3 h 17 min.");
 			btn_lista_sindler.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.lista_Schindler);
 				}
 			});
 			
 			btn_cadena_perpetua = new JButton("Cadena Perpetua: 2 h 22 min.");
 			btn_cadena_perpetua.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.cadena_perpetua);
+
 				}
 			});
 			
 			JButton btn_million_dollar_baby = new JButton("Million Dollar Baby: 2 h 13 min.");
 			btn_million_dollar_baby.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.mdb);
 				}
 			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -137,24 +141,30 @@ public class Frame_Peliculas extends JFrame {
 			JButton btn_novia_frankenstein = new JButton("La novia de Frankenstein: 1 h 15 min.");
 			btn_novia_frankenstein.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.novia_Frankenstein);
+
 				}
 			});
 			
 			JButton btn_odisea_en_el_espacio = new JButton("2001: Odisea en el espacio 2 h 22 min.");
 			btn_odisea_en_el_espacio.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.space_odyssey);
 				}
 			});
 			
 			JButton btn_el_planeta_de_los_simios = new JButton("El planeta de los simios: 1 h 55 min.");
 			btn_el_planeta_de_los_simios.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.planeta_simios);
+
 				}
 			});
 			
 			JButton btn_allien_el_octavo_pasajero = new JButton("Alien, el octavo pasajero: 1 h 57 min.");
 			btn_allien_el_octavo_pasajero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.alien);
 				}
 			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -198,24 +208,29 @@ public class Frame_Peliculas extends JFrame {
 			JButton btn_el_gran_lebowski = new JButton("El gran Lebowsky: 1 h 59 min.");
 			btn_el_gran_lebowski.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.gran_lebowski);
+
 				}
 			});
 			
 			JButton btn_scary_movie = new JButton("Scary movie: 1 h 30 min.");
 			btn_scary_movie.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.scary_movie);
 				}
 			});
 			
 			JButton btn_la_vida_de_brian = new JButton("La vida de Brian: 1 h 34 min.");
 			btn_la_vida_de_brian.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.vida_brian);
 				}
 			});
 			
 			JButton btn_aterriza_como_puedas = new JButton("Aterriza como puedas: 1 h 28 min.");
 			btn_aterriza_como_puedas.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.aterriza_como_puedas);
 				}
 			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -259,24 +274,30 @@ public class Frame_Peliculas extends JFrame {
 			JButton btn_psicosis = new JButton("Psicosis: 1 h 49 min.");
 			btn_psicosis.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.psicosis);
+
 				}
 			});
 			
 			JButton btn_el_resplandor = new JButton("El resplandor: 2 h 26 min.");
 			btn_el_resplandor.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.el_resplandor);
 				}
 			});
 			
 			JButton btn_dracula = new JButton("Dracula: 2 h 35 min.");
 			btn_dracula.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.dracula);
 				}
+				
 			});
 			
 			JButton btn_cisne_negro = new JButton("Cisne negro: 1 h 50 min.");
 			btn_cisne_negro.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					Pelicula.addPeli(Pelicula.cisne_negro);
 				}
 			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);

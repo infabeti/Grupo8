@@ -130,42 +130,55 @@ public class Pelicula {
 		return segundos;
 	}
 	public static void addPeli(Pelicula added_peli) {
-		//Calculando tiempo restante
-		String pelis_Sabado = Frame_Generos.peliculasVistasSabado.getText();
-		int tiempo_actual = hoursToSecs(Frame_Generos.tiempoSabado.getText());
-		int tiempo_peli = added_peli.getDuracion();
-		int tiempo_restante = tiempo_actual-tiempo_peli;
 		
-		//Escribiendo en el JTextArea
-		String str_tiempo_restante = secsToHours(tiempo_restante);
-		Frame_Generos.tiempoSabado.setText(str_tiempo_restante);
-		Frame_Generos.peliculasVistasSabado.setText(pelis_Sabado+added_peli.nombre+"\n"); //SUGERENCIA CAMBIARLO, EL ARRAY DE PELIS DE LA PROGRAMACIÓN NO TIENE NADA QUE VER CON EL TIMPO DISPONIBLE, DEBERÍAN ESTAR RELACIONADOS
-
-		///////////////////////
 		//Manejando el Array
 		if(!Generos.sabado_seleccionadas.isEmpty()) {
+			boolean genero_repetido = false;
 			for(Pelicula peli : Generos.sabado_seleccionadas) {
+
 				if(peli.genero.equals(added_peli.genero)) {
+					genero_repetido = true;
+					////////////////////////////////////////////////////////7
 					System.out.println("No puedes seleccionar más de una película del mismo género");
 					Frame_Generos.frame_generos.setVisible(true);
-					Frame_Generos.drama.dispose();
+					Frame_Generos.frame_pelis.dispose();
 				}
-				else {
-					Generos.sabado_seleccionadas.add(added_peli);
-					Frame_Generos.frame_generos.setVisible(true);
-					Frame_Generos.drama.dispose();
-				}
+
 			}
+			if(!genero_repetido) {
+				addingPeli(added_peli);
+				/////////////////////////////////////////////////////////////////////////
+				Generos.sabado_seleccionadas.add(added_peli);
+				Frame_Generos.frame_generos.setVisible(true);
+				Frame_Generos.frame_pelis.dispose();
+			}
+			
 		}
 		else {
+			addingPeli(added_peli);
+
 			Generos.sabado_seleccionadas.add(added_peli);
 			Frame_Generos.frame_generos.setVisible(true);
-			Frame_Generos.drama.dispose();
+			Frame_Generos.frame_pelis.dispose();
 			
 		}
 
 	}
 	
+	public static void addingPeli(Pelicula added_peli) {
+		//Calculando tiempo restante
+//		int tiempo_actual = hoursToSecs(Frame_Generos.tiempoSabado.getText());
+//		int tiempo_peli = added_peli.getDuracion();
+//		int tiempo_restante = tiempo_actual-tiempo_peli;
+		Generos.calcularDisponible(added_peli, "sabado");
+		int tiempo_restante = Generos.getDisponible_sabado();
+		//Escribiendo en el JTextArea
+		String str_tiempo_restante = secsToHours(tiempo_restante);
+		Frame_Generos.tiempoSabado.setText(str_tiempo_restante);
+		String pelis_Sabado = Frame_Generos.peliculasVistasSabado.getText();
+		Frame_Generos.peliculasVistasSabado.setText(pelis_Sabado+added_peli.nombre+"\n"); //SUGERENCIA CAMBIARLO, EL ARRAY DE PELIS DE LA PROGRAMACIÓN NO TIENE NADA QUE VER CON EL TIMPO DISPONIBLE, DEBERÍAN ESTAR RELACIONADOS
+
+	}
 	public static void main(String ar[]) {
 		//PARA SABER DURACIONES (ORIENTATIVO)
 //		System.out.println(hoursToSecs(2, 39));

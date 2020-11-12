@@ -28,9 +28,7 @@ public class Frame_Generos {
 	public static JTextField tiempoSabado;
 	public static JTextField tiempoDomingo;
 	public static JTextArea peliculasVistasDomingo;
-	public static final int TIEMPO_TOTAL_SABADO=28800; 	//te cambio el nombre porque las constantes se suelen poner en mayúscula, luego para verlo es útil :)
-	public static final int TIEMPO_TOTAL_DOMINGO=21600; //te cambio el nombre porque las constantes se suelen poner en mayúscula, luego para verlo es útil :)
-	public static Frame_Peliculas drama;
+	public static Frame_Peliculas frame_pelis;
 	
 
 	public static void main(String[] args) {
@@ -67,9 +65,9 @@ public class Frame_Generos {
 		JButton btnDrama = new JButton("Drama");
 		btnDrama.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				drama = new Frame_Peliculas("Drama");
-				drama.setVisible(true);
-				frame_generos.setVisible(false);;
+				frame_pelis = new Frame_Peliculas("Drama");
+				frame_pelis.setVisible(true);
+				frame_generos.setVisible(false);
 			}
 		});
 		btnDrama.setBounds(10, 67, 119, 23);
@@ -79,6 +77,9 @@ public class Frame_Generos {
 		JButton btnComedia = new JButton("Comedia");
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis = new Frame_Peliculas("Comedia");
+				frame_pelis.setVisible(true);
+				frame_generos.setVisible(false);
 			}
 		});
 		btnComedia.setBounds(10, 101, 119, 23);
@@ -87,6 +88,9 @@ public class Frame_Generos {
 		JButton btnTerror = new JButton("Terror");
 		btnTerror.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis = new Frame_Peliculas("Terror");
+				frame_pelis.setVisible(true);
+				frame_generos.setVisible(false);
 			}
 		});
 		btnTerror.setBounds(10, 135, 119, 23);
@@ -95,6 +99,9 @@ public class Frame_Generos {
 		JButton btnCienciaFiccion = new JButton("Ciencia Ficcion");
 		btnCienciaFiccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis = new Frame_Peliculas("Sci-Fi");
+				frame_pelis.setVisible(true);
+				frame_generos.setVisible(false);
 			}
 		});
 		btnCienciaFiccion.setBounds(10, 169, 119, 23);
