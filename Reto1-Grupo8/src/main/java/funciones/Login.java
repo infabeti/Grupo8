@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
+import ventanas.Frame_Generos;
 import ventanas.Frame_Login;
 
 public class Login {
@@ -53,6 +54,7 @@ public class Login {
 					setPassword_correcta(true);
 					System.out.println("Pasar a la siguiente ventana");
 					label_password_incorrecta.setVisible(false);
+					Frame_Generos generos = new Frame_Generos();
 					Frame_Login.getFrame().dispose();
 				}
 				else {

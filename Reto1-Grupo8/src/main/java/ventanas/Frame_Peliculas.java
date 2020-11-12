@@ -7,6 +7,9 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import funciones.Pelicula;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -67,7 +70,8 @@ public class Frame_Peliculas extends JFrame {
 			JButton btn_handia = new JButton("Handia: 1h 56 min.");
 			btn_handia.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0){
-					System.out.println(((JButton) arg0.getSource()).getText());
+					
+					Pelicula.addPeli(Pelicula.handia);
 				}
 			});
 			

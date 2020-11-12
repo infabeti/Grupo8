@@ -2,18 +2,21 @@ package funciones;
 
 import java.util.ArrayList;
 
+import ventanas.Frame_Generos;
+import ventanas.Frame_Peliculas;
+
 public class Pelicula {
 //FUNCIONAMIENTO PELICULAS
 	
 	public static ArrayList<Pelicula> peliculas_totales = new ArrayList<Pelicula>();
 	//Drama
-	static Pelicula handia,lista_Schindler, cadena_perpetua, mdb;
+	public static Pelicula handia,lista_Schindler, cadena_perpetua, mdb;
 	//Sci-Fi
-	static Pelicula space_odyssey,novia_Frankenstein, planeta_simios, alien;
+	public static Pelicula space_odyssey,novia_Frankenstein, planeta_simios, alien;
 	//Comedia
-	static Pelicula scary_movie,gran_lebowski, vida_brian, aterriza_como_puedas;
+	public static Pelicula scary_movie,gran_lebowski, vida_brian, aterriza_como_puedas;
 	//Terror
-	static Pelicula psicosis,el_resplandor, dracula, cisne_negro;
+	public static Pelicula psicosis,el_resplandor, dracula, cisne_negro;
 
 	
 	//Declaración de datos
@@ -103,6 +106,7 @@ public class Pelicula {
 		
 		int horas = (int) Math.floor(segundos/3600);
 		int parte_entera = (int)segundos/3600;
+		//Utilizando el teorema del resto:
 		int minutos = (int) Math.round((((segundos/3600d)-parte_entera)*60));
 		return horas+" horas, "+minutos+" minutos.";
 	}
@@ -111,12 +115,62 @@ public class Pelicula {
 		int segundos = horas*3600+minutos*60;
 		return segundos;
 	}
+	public static int hoursToSecs(String horas_y_minutos) {
+		//Sacar hora de la cadena
+		String hora_str = horas_y_minutos.substring(0,1);
+		int horas_int = Integer.valueOf(hora_str);
+		
+		//Sacar minuto de la cadena
+		int indice_inicio = horas_y_minutos.indexOf(", ")+2;
+		int indice_final = horas_y_minutos.indexOf("minutos")-1;
+		String minuto_str = horas_y_minutos.substring(indice_inicio,indice_final);
+		int minutos_int = Integer.valueOf(minuto_str);		
+		//Hacer la operación
+		int segundos = horas_int*3600+minutos_int*60;
+		return segundos;
+	}
+	public static void addPeli(Pelicula added_peli) {
+		//Calculando tiempo restante
+		String pelis_Sabado = Frame_Generos.peliculasVistasSabado.getText();
+		int tiempo_actual = hoursToSecs(Frame_Generos.tiempoSabado.getText());
+		int tiempo_peli = added_peli.getDuracion();
+		int tiempo_restante = tiempo_actual-tiempo_peli;
+		
+		//Escribiendo en el JTextArea
+		String str_tiempo_restante = secsToHours(tiempo_restante);
+		Frame_Generos.tiempoSabado.setText(str_tiempo_restante);
+		Frame_Generos.peliculasVistasSabado.setText(pelis_Sabado+added_peli.nombre+"\n"); //SUGERENCIA CAMBIARLO, EL ARRAY DE PELIS DE LA PROGRAMACIÓN NO TIENE NADA QUE VER CON EL TIMPO DISPONIBLE, DEBERÍAN ESTAR RELACIONADOS
+
+		///////////////////////
+		//Manejando el Array
+		if(!Generos.sabado_seleccionadas.isEmpty()) {
+			for(Pelicula peli : Generos.sabado_seleccionadas) {
+				if(peli.genero.equals(added_peli.genero)) {
+					System.out.println("No puedes seleccionar más de una película del mismo género");
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.drama.dispose();
+				}
+				else {
+					Generos.sabado_seleccionadas.add(added_peli);
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.drama.dispose();
+				}
+			}
+		}
+		else {
+			Generos.sabado_seleccionadas.add(added_peli);
+			Frame_Generos.frame_generos.setVisible(true);
+			Frame_Generos.drama.dispose();
+			
+		}
+
+	}
 	
 	public static void main(String ar[]) {
 		//PARA SABER DURACIONES (ORIENTATIVO)
-//		System.out.println(hoursToSecs(1, 50));
+//		System.out.println(hoursToSecs(2, 39));
 //		System.out.println(secsToHours(alien.getDuracion()));
-		
+//		System.out.println(hoursToSecs("2 horas, 39 minutos."));
 		//PARA IMPRIMIR LOS NOMBRES (ORIENTATIVO)
 //		int cont = 0;
 //		for(Pelicula peli : peliculas_totales) {
