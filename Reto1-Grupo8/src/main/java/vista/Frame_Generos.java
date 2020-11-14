@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 import controlador.Funciones_Generos;
+import controlador.Funciones_Pelicula;
 
 import java.awt.SystemColor;
 import java.awt.Color;
@@ -76,7 +77,8 @@ public class Frame_Generos {
 		btnDrama.setBounds(10, 67, 119, 23);
 		btnDrama.setToolTipText("");
 		frame_generos.getContentPane().add(btnDrama);
-		
+		//2 ideas, pasar el tiempo como parámetro de la ventana e incluirlo en la creación de la misma por género
+		//hacer una variable global 
 		JButton btnComedia = new JButton("Comedia");
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -138,13 +140,13 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(mensajePeliculasSabado);
 		
 		tiempoSabado = new JTextField();
-		tiempoSabado.setText("8 horas, 0 minutos.");
+		tiempoSabado.setText(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_SABADO));
 		tiempoSabado.setEditable(false);
 		tiempoSabado.setBounds(477, 203, 131, 20);
 		frame_generos.getContentPane().add(tiempoSabado);
 		tiempoSabado.setColumns(10);
 		
-		tiempoDomingo = new JTextField();
+		tiempoDomingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_DOMINGO));
 		tiempoDomingo.setEditable(false);
 		tiempoDomingo.setColumns(10);
 		tiempoDomingo.setBounds(477, 228, 131, 20);

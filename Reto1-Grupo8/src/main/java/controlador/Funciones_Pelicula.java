@@ -62,13 +62,9 @@ public class Funciones_Pelicula {
 						}
 					}
 					
-					if(!genero_repetido) {
+					if(!genero_repetido) 
 						addingPeli(added_peli,"sabado");
-
-//						System.out.println(secsToHours(Funciones_Generos.getDisponible_sabado()));
-
-					}
-
+					
 				}
 				else {
 					if(Funciones_Generos.getDisponible_domingo()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL DOMINGO
@@ -82,12 +78,9 @@ public class Funciones_Pelicula {
 								Frame_Generos.frame_pelis.dispose();
 							}
 						}
-						if(!genero_repetido) {
+						if(!genero_repetido) 
 							addingPeli(added_peli,"domingo");
-							System.out.println("sabado desde domingo: "+secsToHours(Funciones_Generos.getDisponible_sabado()));
 	
-						}
-					
 					}
 
 				}
@@ -100,7 +93,6 @@ public class Funciones_Pelicula {
 		}
 		else {
 			addingPeli(added_peli,"sabado");
-			System.out.println(secsToHours(Funciones_Generos.getDisponible_sabado()));
 			Funciones_Generos.totales_seleccionadas.add(added_peli);
 			Frame_Generos.frame_generos.setVisible(true);
 			Frame_Generos.frame_pelis.dispose();
@@ -111,13 +103,10 @@ public class Funciones_Pelicula {
 	
 	public static void addingPeli(Objeto_Pelicula added_peli, String dia) {
 		//Calculando tiempo restante
-		System.out.println("prueba tiempo sabado0: "+secsToHours(Funciones_Generos.getDisponible_sabado()));
-		System.out.println("dia: "+dia);
 		Funciones_Generos.calcularDisponible(added_peli, dia);
-		System.out.println("prueba tiempo sabado1: "+secsToHours(Funciones_Generos.getDisponible_sabado()));
 		int tiempo_restante;
 		String pelis_seleccionadas, str_tiempo_restante;
-		JTextField tiempoDia;
+		JTextField tiempoDia, tiempoPeliDia;
 		JTextArea programacion;
 		ArrayList<Objeto_Pelicula> lista_dia;
 		if(dia.equalsIgnoreCase("sabado")) {
@@ -126,6 +115,7 @@ public class Funciones_Pelicula {
 			tiempoDia = Frame_Generos.tiempoSabado;
 			programacion = Frame_Generos.peliculasVistasSabado;
 			lista_dia = Funciones_Generos.sabado_seleccionadas;
+			tiempoPeliDia = Frame_Peliculas.tf_disponible_sabado;
 		}
 		else {
 			tiempo_restante = Funciones_Generos.getDisponible_domingo();
@@ -133,12 +123,14 @@ public class Funciones_Pelicula {
 			tiempoDia = Frame_Generos.tiempoDomingo;
 			programacion = Frame_Generos.peliculasVistasDomingo;
 			lista_dia = Funciones_Generos.domingo_seleccionadas;
+			tiempoPeliDia = Frame_Peliculas.tf_disponible_domingo;
 		}
-		//Escribiendo en el JTextArea
+		//Escribiendo
 		
 		str_tiempo_restante = secsToHours(tiempo_restante);
 		tiempoDia.setText(str_tiempo_restante);
-		programacion.setText(pelis_seleccionadas+added_peli.getNombre()+"\n");
+		tiempoPeliDia.setText(str_tiempo_restante);
+		programacion.setText(pelis_seleccionadas+added_peli.getGenero()+": "+added_peli.getNombre()+"\n");
 		lista_dia.add(added_peli);
 		
 	}

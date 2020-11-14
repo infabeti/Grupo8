@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controlador.Funciones_Generos;
 import controlador.Funciones_Pelicula;
 import modelo.Objeto_Pelicula;
 
@@ -19,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class Frame_Peliculas extends JFrame {
 
@@ -30,6 +32,9 @@ public class Frame_Peliculas extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btn_cadena_perpetua;
+	public static JTextField tf_disponible_domingo = new JTextField();
+
+	public static JTextField tf_disponible_sabado = new JTextField();
 
 	/**
 	 * Launch the application.
@@ -97,37 +102,81 @@ public class Frame_Peliculas extends JFrame {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.mdb);
 				}
 			});
+			tf_disponible_domingo.setColumns(10);
+			
+			tf_disponible_sabado = new JTextField();
+			tf_disponible_sabado.setColumns(10);
+			
+			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
+			
+			JLabel lblNewLabel = new JLabel("Disponible domingo:");
+			
+			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.frame_pelis.dispose();
+				}
+			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.TRAILING)
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(41)
-								.addComponent(lb_titulo_drama))
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(23)
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 									.addComponent(btn_lista_sindler, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 									.addComponent(btn_cadena_perpetua, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
 									.addComponent(btn_million_dollar_baby, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-									.addComponent(btn_handia, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-						.addContainerGap(214, Short.MAX_VALUE))
+									.addComponent(btn_handia, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addGap(41)
+								.addComponent(lb_titulo_drama)))
+						.addPreferredGap(ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(lblNewLabel)
+									.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(lb_disponible_sabado)
+									.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGap(28))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap())))
 			);
 			gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addGap(22)
 						.addComponent(lb_titulo_drama)
-						.addGap(35)
-						.addComponent(btn_handia)
-						.addGap(18)
-						.addComponent(btn_lista_sindler)
-						.addGap(18)
-						.addComponent(btn_cadena_perpetua)
-						.addGap(18)
-						.addComponent(btn_million_dollar_baby)
-						.addContainerGap(21, Short.MAX_VALUE))
+						.addGap(31)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addGap(4)
+								.addComponent(btn_handia))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lb_disponible_sabado)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGap(7)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_lista_sindler)
+								.addGap(18)
+								.addComponent(btn_cadena_perpetua)
+								.addGap(18)
+								.addComponent(btn_million_dollar_baby))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lblNewLabel)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(bt_generos)))
+						.addContainerGap(19, Short.MAX_VALUE))
 			);
 			contentPane.setLayout(gl_contentPane);
 			
