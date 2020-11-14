@@ -1,4 +1,4 @@
-package ventanas;
+package vista;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import funciones.Login;
+import controlador.Funciones_Login;
 
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;
@@ -124,7 +124,7 @@ public class Frame_Login extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//SE PULSA EL BOTÓN
-				Login.validarCampos(jtf_usuario.getText(), jtf_password.getText());
+				Funciones_Login.validarCampos(jtf_usuario.getText(), jtf_password.getText());
 				
 			}
 		});

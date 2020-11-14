@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import funciones.User;
+import modelo.Objeto_User;
 
 public class TestUser {
-	private User administrador;
+	private Objeto_User administrador;
 	private String user, password;
-	private static ArrayList<User> lista_usuarios = new ArrayList<User>();
+	private static ArrayList<Objeto_User> lista_usuarios = new ArrayList<Objeto_User>();
 	
 	
 	@Test
 	public void testGetPassword() {
 		password = "admin";
-		administrador= new User("admin","admin");
+		administrador= new Objeto_User("admin","admin");
 		String resultado = administrador.getPassword();
 		 assertEquals(null, password, resultado);
 	}
@@ -25,54 +25,54 @@ public class TestUser {
 	@Test
 	public void testGetUser() {
 		user = "admin";
-		administrador= new User("admin","admin");		
+		administrador= new Objeto_User("admin","admin");		
 		String resultado = administrador.getUser();
 		assertEquals(null, user, resultado);
 	}
 
 	@Test 
 	public void testGetAdministrador() {
-		administrador= new User("admin","admin");		
-		User resultado = User.getAdministrador();
+		administrador= new Objeto_User("admin","admin");		
+		Objeto_User resultado = Objeto_User.getAdministrador();
 		//assertEquals(null, administrador, resultado);
 		assertEquals(administrador, resultado);
 	}
 	
 	@Test
 	public void testGetLista_usuarios() {
-		administrador= new User("admin","admin");
-		ArrayList<User> lista = new ArrayList<User>();
+		administrador= new Objeto_User("admin","admin");
+		ArrayList<Objeto_User> lista = new ArrayList<Objeto_User>();
 		lista.add(administrador);
-		ArrayList<User> resultado = User.getLista_usuarios();
+		ArrayList<Objeto_User> resultado = Objeto_User.getLista_usuarios();
 		assertEquals(lista, resultado);
 	}
 	
 	@Test
 	public void testSetAdministrador() {
-		administrador= new User("admin","admin");
-		User.setAdministrador(administrador);
-		assertEquals(administrador, User.getAdministrador());
+		administrador= new Objeto_User("admin","admin");
+		Objeto_User.setAdministrador(administrador);
+		assertEquals(administrador, Objeto_User.getAdministrador());
 	}
 	@Test
 	public void testSetPassword() {
 		password="admin";
-		administrador = new User(null, null);
+		administrador = new Objeto_User(null, null);
 		administrador.setPassword(password);
 		assertEquals(password, administrador.getPassword());
 	}
 	@Test
 	public void testSetUser() {
 		user="admin";
-		administrador = new User(null, null);
+		administrador = new Objeto_User(null, null);
 		administrador.setUser(user);
 		assertEquals(user, administrador.getUser());
 	}
 	
 	@Test
 	public void testSetLista_usuarios() {
-		ArrayList<User> lista = new ArrayList<User>();
+		ArrayList<Objeto_User> lista = new ArrayList<Objeto_User>();
 		lista.add(administrador);
-		User.setLista_usuarios(lista);
-		assertEquals(lista, User.getLista_usuarios());
+		Objeto_User.setLista_usuarios(lista);
+		assertEquals(lista, Objeto_User.getLista_usuarios());
 	}
 }

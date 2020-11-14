@@ -1,4 +1,4 @@
-package ventanas;
+package vista;
 
 import java.awt.EventQueue;
 
@@ -15,6 +15,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+
+import controlador.Funciones_Generos;
+
 import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -125,7 +128,7 @@ public class Frame_Generos {
 		peliculasVistasSabado = new JTextArea();
 		peliculasVistasSabado.setEditable(false);
 		peliculasVistasSabado.setBackground(Color.WHITE);
-		peliculasVistasSabado.setBounds(166, 68, 216, 124);
+		peliculasVistasSabado.setBounds(166, 68, 216, 81);
 		frame_generos.getContentPane().add(peliculasVistasSabado);
 		peliculasVistasSabado.setColumns(10);
 		
@@ -151,14 +154,30 @@ public class Frame_Generos {
 		peliculasVistasDomingo.setEditable(false);
 		peliculasVistasDomingo.setColumns(10);
 		peliculasVistasDomingo.setBackground(Color.WHITE);
-		peliculasVistasDomingo.setBounds(400, 68, 216, 124);
+		peliculasVistasDomingo.setBounds(400, 68, 216, 81);
 		frame_generos.getContentPane().add(peliculasVistasDomingo);
 		
 		JLabel mensajePeliculasDomingo = new JLabel("Peliculas vistas domingo");
 		mensajePeliculasDomingo.setFont(new Font("Arial Black", Font.BOLD, 13));
 		mensajePeliculasDomingo.setBounds(411, 45, 204, 23);
 		frame_generos.getContentPane().add(mensajePeliculasDomingo);
+		
+		JButton btnNewButton = new JButton("Limpiar lista");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Funciones_Generos.limpiarLista("sabado");
+			}
+		});
+		btnNewButton.setBounds(166, 169, 216, 23);
+		frame_generos.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Limpiar lista");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Funciones_Generos.limpiarLista("domingo");
+			}
+		});
+		btnNewButton_1.setBounds(400, 169, 216, 23);
+		frame_generos.getContentPane().add(btnNewButton_1);
 	}
-	
-	
 }

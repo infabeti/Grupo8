@@ -2,7 +2,7 @@ package Reto1.Grupo8;
 
 import org.junit.jupiter.api.Test;
 
-import funciones.Bienvenida;
+import controlador.Funciones_Bienvenida;
 
 import static org.junit.Assert.*;
 
@@ -13,10 +13,10 @@ class TestBienvenida {
 	@Test
 	public void testBienvenida() {
 		resultado = true;
-		Bienvenida.pasar_a_login();
+		Funciones_Bienvenida.pasar_a_login();
 		
-		System.out.println("iniciar_login: "+Bienvenida.iniciar_login);
-		org.junit.Assert.assertEquals(resultado, Bienvenida.iniciar_login);
+		System.out.println("iniciar_login: "+Funciones_Bienvenida.iniciar_login);
+		org.junit.Assert.assertEquals(resultado, Funciones_Bienvenida.iniciar_login);
 	}
 
 }

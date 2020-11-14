@@ -6,8 +6,8 @@ import javax.swing.JLabel;
 
 import org.junit.Test;
 
-import funciones.Login;
-import ventanas.Frame_Login;
+import controlador.Funciones_Login;
+import vista.Frame_Login;
 
 public class TestLogin {
 
@@ -26,16 +26,16 @@ public class TestLogin {
 		label_password_incorrecta = Frame_Login.getLabel_password_incorrecta();
 		resultado_password_correcta = true;
 		resulado_usuario_existe = true;
-		Login.validarCampos(usuarioRecogido, passwordRecogida);
-		org.junit.Assert.assertEquals(resultado_password_correcta, Login.isPassword_correcta());
-		org.junit.Assert.assertEquals(resulado_usuario_existe, Login.isUsuario_existe());
+		Funciones_Login.validarCampos(usuarioRecogido, passwordRecogida);
+		org.junit.Assert.assertEquals(resultado_password_correcta, Funciones_Login.isPassword_correcta());
+		org.junit.Assert.assertEquals(resulado_usuario_existe, Funciones_Login.isUsuario_existe());
 
 	}
 	
 	@Test
 	public void testIsPasswordCorrecta() {
-		Login.setPassword_correcta(true);
-		assertEquals(true, Login.isUsuario_existe());
+		Funciones_Login.setPassword_correcta(true);
+		assertEquals(true, Funciones_Login.isUsuario_existe());
 	
 		
 	}

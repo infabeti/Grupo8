@@ -1,4 +1,4 @@
-package ventanas;
+package vista;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.Timer;
 
-import funciones.Bienvenida;
+import controlador.Funciones_Bienvenida;
 
 import java.awt.event.*;
 public class Frame_Bienvenida {
@@ -29,7 +29,7 @@ public class Frame_Bienvenida {
 
 	public Frame_Bienvenida() {
 		initialize();
-		Bienvenida.pasar_a_login();
+		Funciones_Bienvenida.pasar_a_login();
 		
 		
 	}

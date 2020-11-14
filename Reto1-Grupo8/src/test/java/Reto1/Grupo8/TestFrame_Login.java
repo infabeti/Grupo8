@@ -10,13 +10,13 @@ import javax.swing.JTextField;
 
 import org.junit.Test;
 
-import funciones.User;
-import ventanas.Frame_Login;
+import modelo.Objeto_User;
+import vista.Frame_Login;
 
 public class TestFrame_Login {
 
 	private String usuarioRecogido, passwordRecogida;
-	private ArrayList<User> listaUsers;
+	private ArrayList<Objeto_User> listaUsers;
 	private static JTextField tf,resultadotf;
 	private static JPasswordField pf,resultadopf;
 

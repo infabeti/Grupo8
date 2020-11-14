@@ -1,11 +1,11 @@
-package funciones;
+package controlador;
 
 import javax.swing.Timer;
 
-import ventanas.Frame_Bienvenida;
-import ventanas.Frame_Login;
+import vista.Frame_Bienvenida;
+import vista.Frame_Login;
 
-public class Bienvenida {
+public class Funciones_Bienvenida {
 	public static Timer tiempo;
 	public static boolean iniciar_login, parar_timer ;
 	
