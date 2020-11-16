@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package test_controlador;
 
 import static org.junit.Assert.*;
 

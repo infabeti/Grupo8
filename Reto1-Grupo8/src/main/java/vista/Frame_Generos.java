@@ -61,7 +61,6 @@ public class Frame_Generos {
 		frame_generos.setBounds(100, 100, 655, 301);
 		frame_generos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame_generos.getContentPane().setLayout(null);
-		
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.setBounds(10, 227, 69, 23);
 		frame_generos.getContentPane().add(btnSalir);
@@ -182,4 +181,5 @@ public class Frame_Generos {
 		btnNewButton_1.setBounds(400, 169, 216, 23);
 		frame_generos.getContentPane().add(btnNewButton_1);
 	}
+	
 }

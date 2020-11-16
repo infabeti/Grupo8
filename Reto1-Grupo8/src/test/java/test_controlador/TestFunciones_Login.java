@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package test_controlador;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
 import controlador.Funciones_Login;
 import vista.Frame_Login;
 
-public class TestLogin {
+public class TestFunciones_Login {
 
 	private static String usuarioRecogido;
 	private static String passwordRecogida;

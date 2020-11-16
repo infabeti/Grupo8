@@ -53,7 +53,6 @@ public class Funciones_Login {
 				label_usuario_no_existe.setVisible(false);
 				if(usuario.getPassword().equals(passwordRecogida)) {
 					setPassword_correcta(true);
-					System.out.println("Pasar a la siguiente ventana");
 					label_password_incorrecta.setVisible(false);
 					Frame_Generos generos = new Frame_Generos();
 					Frame_Login.getFrame().dispose();

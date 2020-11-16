@@ -1,4 +1,4 @@
-package Reto1.Grupo8;
+package test_modelo;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import modelo.Objeto_User;
 
-public class TestUser {
+public class TestObjeto_User {
 	private Objeto_User administrador;
 	private String user, password;
 	private static ArrayList<Objeto_User> lista_usuarios = new ArrayList<Objeto_User>();
