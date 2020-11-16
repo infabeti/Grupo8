@@ -29,7 +29,7 @@ public class Funciones_Generos {
 	}
 	
 	public static void limpiarLista(String dia) {
-		if(dia.equalsIgnoreCase("sabado")) {s
+		if(dia.equalsIgnoreCase("sabado")) {
 			sabado_seleccionadas.clear();
 			totales_seleccionadas.clear();
 			totales_seleccionadas.addAll(domingo_seleccionadas);
