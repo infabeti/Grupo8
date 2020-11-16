@@ -2,6 +2,7 @@ package controlador;
 
 import java.util.ArrayList;
 
+import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -15,6 +16,7 @@ public class Funciones_Pelicula {
 	
 	
 	private static final Object genero = null;
+	
 	public static String secsToHours(int segundos){
 		
 		int horas = (int) Math.floor(segundos/3600);
@@ -24,31 +26,28 @@ public class Funciones_Pelicula {
 		return horas+" horas, "+minutos+" minutos.";
 	}
 	
-	public static int hoursToSecs(int horas, int minutos) {
-		int segundos = horas*3600+minutos*60;
-		return segundos;
-	}
-	public static int hoursToSecs(String horas_y_minutos) {
-		//Sacar hora de la cadena
-		String hora_str = horas_y_minutos.substring(0,1);
-		int horas_int = Integer.valueOf(hora_str);
-		
-		//Sacar minuto de la cadena
-		int indice_inicio = horas_y_minutos.indexOf(", ")+2;
-		int indice_final = horas_y_minutos.indexOf("minutos")-1;
-		String minuto_str = horas_y_minutos.substring(indice_inicio,indice_final);
-		int minutos_int = Integer.valueOf(minuto_str);		
-		//Hacer la operación
-		int segundos = horas_int*3600+minutos_int*60;
-		return segundos;
-	}
+//	public static int hoursToSecs(int horas, int minutos) {
+//		int segundos = horas*3600+minutos*60;
+//		return segundos;
+//	}
+//	public static int hoursToSecs(String horas_y_minutos) {
+//		//Sacar hora de la cadena
+//		String hora_str = horas_y_minutos.substring(0,1);
+//		int horas_int = Integer.valueOf(hora_str);
+//		
+//		//Sacar minuto de la cadena
+//		int indice_inicio = horas_y_minutos.indexOf(", ")+2;
+//		int indice_final = horas_y_minutos.indexOf("minutos")-1;
+//		String minuto_str = horas_y_minutos.substring(indice_inicio,indice_final);
+//		int minutos_int = Integer.valueOf(minuto_str);		
+//		//Hacer la operación
+//		int segundos = horas_int*3600+minutos_int*60;
+//		return segundos;
+//	}
 	
-	boolean seleccionando_sabado = true;
 	public static void addPeli(Objeto_Pelicula added_peli) {
-		
 		//Manejando el Array
 		if(!Funciones_Generos.totales_seleccionadas.isEmpty()) {
-			
 				if(Funciones_Generos.getDisponible_sabado()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL SÁBADO
 					boolean genero_repetido = false;
 					for(Objeto_Pelicula peli : Funciones_Generos.sabado_seleccionadas) { // SI NO SE REPITE EL GÉNERO
@@ -62,8 +61,9 @@ public class Funciones_Pelicula {
 						}
 					}
 					
-					if(!genero_repetido) 
+					if(!genero_repetido) {
 						addingPeli(added_peli,"sabado");
+					}
 					
 				}
 				else {
@@ -80,7 +80,6 @@ public class Funciones_Pelicula {
 						}
 						if(!genero_repetido) 
 							addingPeli(added_peli,"domingo");
-	
 					}
 
 				}
@@ -126,19 +125,30 @@ public class Funciones_Pelicula {
 			tiempoPeliDia = Frame_Peliculas.tf_disponible_domingo;
 		}
 		//Escribiendo
-		
 		str_tiempo_restante = secsToHours(tiempo_restante);
-		tiempoDia.setText(str_tiempo_restante);
-		tiempoPeliDia.setText(str_tiempo_restante);
+		tiempoDia.setText(str_tiempo_restante);  //tiempoDia.getText(str_Tiempo_restante)
+		tiempoPeliDia.setText(str_tiempo_restante); //tiempoPeliDia.getText(str_tiempo_restante)
 		programacion.setText(pelis_seleccionadas+added_peli.getGenero()+": "+added_peli.getNombre()+"\n");
 		lista_dia.add(added_peli);
-		
+
 	}
-	public static void main(String ar[]) {
+//	public static void main(String ar[]) {
 		//PARA SABER DURACIONES (ORIENTATIVO)
-//		System.out.println(hoursToSecs(2, 39));
-//		System.out.println(secsToHours(alien.getDuracion()));
-//		System.out.println(hoursToSecs("2 horas, 39 minutos."));
+//		System.out.println(secsToHours(Objeto_Pelicula.alien.getDuracion()));
+//		
+		//TESTEANDO ADD PELI
+//		new Frame_Generos();
+//		Frame_Generos.frame_pelis = new Frame_Peliculas("Sci-Fi");
+//		System.out.println(Funciones_Generos.totales_seleccionadas.size());
+//		Funciones_Pelicula.addPeli(Objeto_Pelicula.alien);
+//		System.out.println(Funciones_Generos.totales_seleccionadas.size());
+//		System.out.println(pelicula_introducida);
+		
+		//PARA TESTEAR ADDING PELI
+//		addingPeli(Objeto_Pelicula.alien,"sabado");
+//		System.out.println(Frame_Generos.tiempoSabado.getText());
+//		System.out.println(Frame_Generos.peliculasVistasSabado.getText());
+
 		//PARA IMPRIMIR LOS NOMBRES (ORIENTATIVO)
 //		int cont = 0;
 //		for(Pelicula peli : peliculas_totales) {
@@ -147,5 +157,5 @@ public class Funciones_Pelicula {
 //			System.out.println(peli.getNombre());
 //			cont++;
 //		}
-	}
+	
 }
