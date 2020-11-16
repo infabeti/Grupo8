@@ -34,6 +34,7 @@ public class Frame_Generos {
 	public static JTextArea peliculasVistasDomingo;
 	public static Frame_Peliculas frame_pelis;
 	
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -62,6 +63,13 @@ public class Frame_Generos {
 		frame_generos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame_generos.getContentPane().setLayout(null);
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame_generos.dispose();
+				Frame_Bienvenida bienvenida=new Frame_Bienvenida();
+				
+			}
+		});
 		btnSalir.setBounds(10, 227, 69, 23);
 		frame_generos.getContentPane().add(btnSalir);
 		

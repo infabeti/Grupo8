@@ -217,6 +217,13 @@ public class Frame_Peliculas extends JFrame {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.alien);
 				}
 			});
+			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.frame_pelis.dispose();
+				}
+			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -226,11 +233,13 @@ public class Frame_Peliculas extends JFrame {
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(18)
 								.addComponent(lb_titulo_scifi, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-							.addComponent(btn_novia_frankenstein, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-							.addComponent(btn_el_planeta_de_los_simios, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-							.addComponent(btn_allien_el_octavo_pasajero, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+							.addComponent(btn_novia_frankenstein, GroupLayout.PREFERRED_SIZE, 187, Short.MAX_VALUE)
+							.addComponent(btn_el_planeta_de_los_simios, GroupLayout.PREFERRED_SIZE, 187, Short.MAX_VALUE)
+							.addComponent(btn_allien_el_octavo_pasajero, GroupLayout.PREFERRED_SIZE, 187, Short.MAX_VALUE)
 							.addComponent(btn_odisea_en_el_espacio, GroupLayout.PREFERRED_SIZE, 233, GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(171, Short.MAX_VALUE))
+						.addGap(18)
+						.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 			);
 			gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -246,6 +255,10 @@ public class Frame_Peliculas extends JFrame {
 						.addGap(18)
 						.addComponent(btn_allien_el_octavo_pasajero)
 						.addContainerGap(32, Short.MAX_VALUE))
+					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+						.addContainerGap(178, Short.MAX_VALUE)
+						.addComponent(bt_generos)
+						.addGap(50))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
@@ -283,6 +296,14 @@ public class Frame_Peliculas extends JFrame {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.aterriza_como_puedas);
 				}
 			});
+			
+			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.frame_pelis.dispose();
+				}
+			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -292,11 +313,14 @@ public class Frame_Peliculas extends JFrame {
 							.addComponent(btn_scary_movie, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addComponent(btn_el_gran_lebowski, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addComponent(btn_la_vida_de_brian, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btn_aterriza_como_puedas, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_aterriza_como_puedas, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(18)
 								.addComponent(lb_titulo_drama_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)))
-						.addContainerGap(227, Short.MAX_VALUE))
+						.addContainerGap())
 			);
 			gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -311,7 +335,11 @@ public class Frame_Peliculas extends JFrame {
 						.addComponent(btn_la_vida_de_brian)
 						.addGap(18)
 						.addComponent(btn_aterriza_como_puedas)
-						.addContainerGap(42, Short.MAX_VALUE))
+						.addContainerGap(32, Short.MAX_VALUE))
+					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+						.addContainerGap(185, Short.MAX_VALUE)
+						.addComponent(bt_generos)
+						.addGap(43))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
@@ -350,6 +378,13 @@ public class Frame_Peliculas extends JFrame {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.cisne_negro);
 				}
 			});
+			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Frame_Generos.frame_generos.setVisible(true);
+					Frame_Generos.frame_pelis.dispose();
+				}
+			});
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -362,14 +397,16 @@ public class Frame_Peliculas extends JFrame {
 							.addComponent(btn_psicosis, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addComponent(btn_el_resplandor, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addComponent(btn_dracula, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btn_cisne_negro, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(227, Short.MAX_VALUE))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_cisne_negro, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
+						.addContainerGap())
 			);
 			gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addContainerGap()
-						.addGap(1)
 						.addComponent(lb_titulo_drama_1_1, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
 						.addGap(35)
 						.addComponent(btn_psicosis)
@@ -379,7 +416,11 @@ public class Frame_Peliculas extends JFrame {
 						.addComponent(btn_dracula)
 						.addGap(18)
 						.addComponent(btn_cisne_negro)
-						.addContainerGap(32, Short.MAX_VALUE))
+						.addContainerGap(42, Short.MAX_VALUE))
+					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+						.addContainerGap(172, Short.MAX_VALUE)
+						.addComponent(bt_generos)
+						.addGap(56))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
