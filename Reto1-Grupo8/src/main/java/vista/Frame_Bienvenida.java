@@ -15,7 +15,7 @@ import controlador.Funciones_Bienvenida;
 
 import java.awt.event.*;
 public class Frame_Bienvenida {
-	private static JFrame frmBienvenida;
+	public static JFrame frmBienvenida;
 	
 	public static JFrame getFrmBienvenida() {
 		return frmBienvenida;
@@ -77,8 +77,8 @@ public class Frame_Bienvenida {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame_Bienvenida window = new Frame_Bienvenida();
-					window.frmBienvenida.setVisible(true);
+					Frame_Bienvenida frmBienvenida = new Frame_Bienvenida();
+					Frame_Bienvenida.frmBienvenida.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
