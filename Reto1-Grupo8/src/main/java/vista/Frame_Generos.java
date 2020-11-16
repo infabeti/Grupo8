@@ -67,6 +67,7 @@ public class Frame_Generos {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_generos.dispose();
 				Frame_Bienvenida bienvenida=new Frame_Bienvenida();
+				bienvenida.frmBienvenida.setVisible(true);
 				
 			}
 		});
