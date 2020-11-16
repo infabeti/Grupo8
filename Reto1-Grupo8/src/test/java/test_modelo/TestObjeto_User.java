@@ -19,7 +19,7 @@ public class TestObjeto_User {
 		password = "admin";
 		administrador= new Objeto_User("admin","admin");
 		String resultado = administrador.getPassword();
-		 assertEquals(null, password, resultado);
+		 assertEquals(password, resultado);
 	}
 	
 	@Test
@@ -34,7 +34,6 @@ public class TestObjeto_User {
 	public void testGetAdministrador() {
 		administrador= new Objeto_User("admin","admin");		
 		Objeto_User resultado = Objeto_User.getAdministrador();
-		//assertEquals(null, administrador, resultado);
 		assertEquals(administrador, resultado);
 	}
 	

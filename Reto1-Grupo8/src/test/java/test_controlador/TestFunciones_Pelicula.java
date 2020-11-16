@@ -1,8 +1,8 @@
 package test_controlador;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import controlador.Funciones_Generos;
 import controlador.Funciones_Pelicula;
@@ -34,11 +34,27 @@ class TestFunciones_Pelicula {
 		
 		new Frame_Generos();
 		Frame_Generos.frame_pelis = new Frame_Peliculas("Sci-Fi");
-		Funciones_Pelicula.addPeli(Objeto_Pelicula.alien);
-
+		//Pelicula sábado
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.alien);		
 		int size_pelicula_despues_de_add = Objeto_Pelicula.peliculas_totales.size();
-
 		assertEquals(totales_seleccionadas+1,size_pelicula_despues_de_add);
+		
+		//Género repetido sábado
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.planeta_simios);
+		assertEquals(true,Funciones_Pelicula.genero_sabado_repetido);
+		
+		//Película domingo
+		Funciones_Generos.setDisponible_sabado(1); //Hago que no quepa la peícula para evaluarlo en ese caso
+		
+		totales_seleccionadas = Funciones_Generos.totales_seleccionadas.size();
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.dracula);
+		size_pelicula_despues_de_add = Objeto_Pelicula.peliculas_totales.size();
+		
+		assertEquals(totales_seleccionadas+1,size_pelicula_despues_de_add);
+		
+		//Género repetido domingo
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.el_resplandor);
+		assertEquals(true,Funciones_Pelicula.genero_domingo_repetido);
 	}
 	
 	@Test

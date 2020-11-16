@@ -44,16 +44,17 @@ public class Funciones_Pelicula {
 //		int segundos = horas_int*3600+minutos_int*60;
 //		return segundos;
 //	}
-	
+	public static boolean genero_sabado_repetido;
+	public static boolean genero_domingo_repetido; //Saco estas variables puesto que necesito que sean de alcance público para evaluarlas
 	public static void addPeli(Objeto_Pelicula added_peli) {
 		//Manejando el Array
 		if(!Funciones_Generos.totales_seleccionadas.isEmpty()) {
 				if(Funciones_Generos.getDisponible_sabado()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL SÁBADO
-					boolean genero_repetido = false;
+					genero_sabado_repetido = false;
 					for(Objeto_Pelicula peli : Funciones_Generos.sabado_seleccionadas) { // SI NO SE REPITE EL GÉNERO
 
 						if(peli.getGenero().equals(added_peli.getGenero())) {
-							genero_repetido = true;
+							genero_sabado_repetido = true;
 							////////////////////////////////////////////////////////7
 							System.out.println("Ya hay una película de "+added_peli.getGenero()+" el sábado. No puedes seleccionar otra");
 							Frame_Generos.frame_generos.setVisible(true);
@@ -61,24 +62,24 @@ public class Funciones_Pelicula {
 						}
 					}
 					
-					if(!genero_repetido) {
+					if(!genero_sabado_repetido) {
 						addingPeli(added_peli,"sabado");
 					}
 					
 				}
 				else {
 					if(Funciones_Generos.getDisponible_domingo()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL DOMINGO
-						boolean genero_repetido = false;
+						genero_domingo_repetido = false;
 						for(Objeto_Pelicula peli : Funciones_Generos.domingo_seleccionadas) { // SI NO SE REPITE EL GÉNERO
 							if(peli.getGenero().equals(added_peli.getGenero())) {
-								genero_repetido = true;
+								genero_domingo_repetido = true;
 								////////////////////////////////////////////////////////7
 								System.out.println("Ya hay una película de "+added_peli.getGenero()+" el domingo. No puedes seleccionar otra");
 								Frame_Generos.frame_generos.setVisible(true);
 								Frame_Generos.frame_pelis.dispose();
 							}
 						}
-						if(!genero_repetido) 
+						if(!genero_domingo_repetido) 
 							addingPeli(added_peli,"domingo");
 					}
 

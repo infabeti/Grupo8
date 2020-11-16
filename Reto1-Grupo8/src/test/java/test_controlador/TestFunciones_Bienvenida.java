@@ -1,10 +1,8 @@
 package test_controlador;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import controlador.Funciones_Bienvenida;
-
-import static org.junit.Assert.*;
 
 class TestFunciones_Bienvenida {
 	

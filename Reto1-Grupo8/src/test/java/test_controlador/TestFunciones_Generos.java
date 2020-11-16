@@ -1,13 +1,11 @@
 package test_controlador;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import controlador.Funciones_Generos;
-import controlador.Funciones_Pelicula;
 import modelo.Objeto_Pelicula;
 
 class TestFunciones_Generos {
@@ -32,5 +30,15 @@ class TestFunciones_Generos {
 
 	}
 	
-
+	@Test 
+	void testGetDisponible_sabado() {
+		Funciones_Generos.setDisponible_sabado(2);
+		assertEquals(2, Funciones_Generos.getDisponible_sabado());
+	}
+	
+	@Test 
+	void testGetDisponible_domingo() {
+		Funciones_Generos.setDisponible_domingo(2);
+		assertEquals(2, Funciones_Generos.getDisponible_domingo());
+	}
 }
