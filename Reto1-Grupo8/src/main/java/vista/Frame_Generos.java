@@ -32,8 +32,11 @@ public class Frame_Generos {
 	public static JTextField tiempoSabado;
 	public static JTextField tiempoDomingo;
 	public static JTextArea peliculasVistasDomingo;
+	public static Frame_Peliculas frame_pelis_drama = new Frame_Peliculas("Drama");
+	public static Frame_Peliculas frame_pelis_comedia = new Frame_Peliculas("Comedia");
+	public static Frame_Peliculas frame_pelis_scifi = new Frame_Peliculas("Sci-Fi");
+	public static Frame_Peliculas frame_pelis_terror = new Frame_Peliculas("Terror");
 	public static Frame_Peliculas frame_pelis;
-	
 	
 
 	public static void main(String[] args) {
@@ -77,8 +80,7 @@ public class Frame_Generos {
 		JButton btnDrama = new JButton("Drama");
 		btnDrama.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame_pelis = new Frame_Peliculas("Drama");
-				frame_pelis.setVisible(true);
+				frame_pelis_drama.setVisible(true);
 				frame_generos.setVisible(false);
 			}
 		});
@@ -90,8 +92,7 @@ public class Frame_Generos {
 		JButton btnComedia = new JButton("Comedia");
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame_pelis = new Frame_Peliculas("Comedia");
-				frame_pelis.setVisible(true);
+				frame_pelis_comedia.setVisible(true);
 				frame_generos.setVisible(false);
 			}
 		});
@@ -101,8 +102,7 @@ public class Frame_Generos {
 		JButton btnTerror = new JButton("Terror");
 		btnTerror.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame_pelis = new Frame_Peliculas("Terror");
-				frame_pelis.setVisible(true);
+				frame_pelis_terror.setVisible(true);
 				frame_generos.setVisible(false);
 			}
 		});
@@ -112,8 +112,7 @@ public class Frame_Generos {
 		JButton btnCienciaFiccion = new JButton("Ciencia Ficcion");
 		btnCienciaFiccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame_pelis = new Frame_Peliculas("Sci-Fi");
-				frame_pelis.setVisible(true);
+				frame_pelis_scifi.setVisible(true);
 				frame_generos.setVisible(false);
 			}
 		});

@@ -3,6 +3,7 @@ package controlador;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -46,7 +47,7 @@ public class Funciones_Pelicula {
 //	}
 	public static boolean genero_sabado_repetido;
 	public static boolean genero_domingo_repetido; //Saco estas variables puesto que necesito que sean de alcance público para evaluarlas
-	public static void addPeli(Objeto_Pelicula added_peli) {
+	public static void addPeli(Objeto_Pelicula added_peli, JFrame frame_pelis) {
 		//Manejando el Array
 		if(!Funciones_Generos.totales_seleccionadas.isEmpty()) {
 				if(Funciones_Generos.getDisponible_sabado()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL SÁBADO
@@ -58,7 +59,7 @@ public class Funciones_Pelicula {
 							////////////////////////////////////////////////////////7
 							System.out.println("Ya hay una película de "+added_peli.getGenero()+" el sábado. No puedes seleccionar otra");
 							Frame_Generos.frame_generos.setVisible(true);
-							Frame_Generos.frame_pelis.dispose();
+							frame_pelis.dispose();
 						}
 					}
 					
@@ -76,7 +77,7 @@ public class Funciones_Pelicula {
 								////////////////////////////////////////////////////////7
 								System.out.println("Ya hay una película de "+added_peli.getGenero()+" el domingo. No puedes seleccionar otra");
 								Frame_Generos.frame_generos.setVisible(true);
-								Frame_Generos.frame_pelis.dispose();
+								frame_pelis.dispose();
 							}
 						}
 						if(!genero_domingo_repetido) 
@@ -88,14 +89,14 @@ public class Funciones_Pelicula {
 				/////////////////////////////////////////////////////////////////////////
 				Funciones_Generos.totales_seleccionadas.add(added_peli);
 				Frame_Generos.frame_generos.setVisible(true);
-				Frame_Generos.frame_pelis.dispose();
+				frame_pelis.dispose();
 				
 		}
 		else {
 			addingPeli(added_peli,"sabado");
 			Funciones_Generos.totales_seleccionadas.add(added_peli);
 			Frame_Generos.frame_generos.setVisible(true);
-			Frame_Generos.frame_pelis.dispose();
+			frame_pelis.dispose();
 			
 		}
 

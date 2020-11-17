@@ -35,25 +35,25 @@ class TestFunciones_Pelicula {
 		new Frame_Generos();
 		Frame_Generos.frame_pelis = new Frame_Peliculas("Sci-Fi");
 		//Pelicula sábado
-		Funciones_Pelicula.addPeli(Objeto_Pelicula.alien);		
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.alien, Frame_Generos.frame_pelis_scifi);		
 		int size_pelicula_despues_de_add = Objeto_Pelicula.peliculas_totales.size();
 		assertEquals(totales_seleccionadas+1,size_pelicula_despues_de_add);
 		
 		//Género repetido sábado
-		Funciones_Pelicula.addPeli(Objeto_Pelicula.planeta_simios);
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.planeta_simios, Frame_Generos.frame_pelis_scifi);
 		assertEquals(true,Funciones_Pelicula.genero_sabado_repetido);
 		
 		//Película domingo
 		Funciones_Generos.setDisponible_sabado(1); //Hago que no quepa la peícula para evaluarlo en ese caso
 		
 		totales_seleccionadas = Funciones_Generos.totales_seleccionadas.size();
-		Funciones_Pelicula.addPeli(Objeto_Pelicula.dracula);
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.dracula, Frame_Generos.frame_pelis_terror);
 		size_pelicula_despues_de_add = Objeto_Pelicula.peliculas_totales.size();
 		
 		assertEquals(totales_seleccionadas+1,size_pelicula_despues_de_add);
 		
 		//Género repetido domingo
-		Funciones_Pelicula.addPeli(Objeto_Pelicula.el_resplandor);
+		Funciones_Pelicula.addPeli(Objeto_Pelicula.el_resplandor, Frame_Generos.frame_pelis_terror);
 		assertEquals(true,Funciones_Pelicula.genero_domingo_repetido);
 	}
 	
