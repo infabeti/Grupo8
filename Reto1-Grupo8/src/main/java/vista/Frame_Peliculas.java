@@ -33,7 +33,6 @@ public class Frame_Peliculas extends JFrame {
 	private JPanel contentPane;
 	private JButton btn_cadena_perpetua;
 	public static JTextField tf_disponible_sabado;
-
 	public static JTextField tf_disponible_domingo;
 
 	/**
@@ -85,6 +84,7 @@ public class Frame_Peliculas extends JFrame {
 			btn_lista_sindler.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.lista_Schindler,Frame_Generos.frame_pelis_drama);
+					
 				}
 			});
 			
@@ -102,7 +102,7 @@ public class Frame_Peliculas extends JFrame {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.mdb,Frame_Generos.frame_pelis_drama);
 				}
 			});
-			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_SABADO));
+			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
 			tf_disponible_sabado.setEditable(false);
 			tf_disponible_sabado.setColumns(10);
 			
@@ -235,6 +235,18 @@ public class Frame_Peliculas extends JFrame {
 					Frame_Generos.frame_pelis_scifi.dispose();
 				}
 			});
+			
+			JLabel lblNewLabel = new JLabel("Disponible domingo:");
+			
+			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
+			
+			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setEditable(false);
+			tf_disponible_domingo.setColumns(10);
+			
+			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setEditable(false);
+			tf_disponible_sabado.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -249,27 +261,41 @@ public class Frame_Peliculas extends JFrame {
 							.addComponent(btn_allien_el_octavo_pasajero, GroupLayout.PREFERRED_SIZE, 187, Short.MAX_VALUE)
 							.addComponent(btn_odisea_en_el_espacio, GroupLayout.PREFERRED_SIZE, 233, GroupLayout.PREFERRED_SIZE))
 						.addGap(18)
-						.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lb_disponible_sabado, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+							.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+							.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
 						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 			);
 			gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-					.addGroup(gl_contentPane.createSequentialGroup()
+				gl_contentPane.createParallelGroup(Alignment.TRAILING)
+					.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
 						.addContainerGap()
 						.addComponent(lb_titulo_scifi, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
 						.addGap(35)
-						.addComponent(btn_odisea_en_el_espacio)
-						.addGap(18)
-						.addComponent(btn_novia_frankenstein)
-						.addGap(18)
-						.addComponent(btn_el_planeta_de_los_simios)
-						.addGap(18)
-						.addComponent(btn_allien_el_octavo_pasajero)
-						.addContainerGap(32, Short.MAX_VALUE))
-					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-						.addContainerGap(178, Short.MAX_VALUE)
-						.addComponent(bt_generos)
-						.addGap(50))
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+								.addComponent(lb_disponible_sabado)
+								.addGap(6)
+								.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(7)
+								.addComponent(lblNewLabel)
+								.addGap(6)
+								.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+								.addComponent(bt_generos)
+								.addGap(50))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_odisea_en_el_espacio)
+								.addGap(18)
+								.addComponent(btn_novia_frankenstein)
+								.addGap(18)
+								.addComponent(btn_el_planeta_de_los_simios)
+								.addGap(18)
+								.addComponent(btn_allien_el_octavo_pasajero)
+								.addContainerGap(32, Short.MAX_VALUE))))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
@@ -315,42 +341,70 @@ public class Frame_Peliculas extends JFrame {
 					Frame_Generos.frame_pelis_comedia.dispose();
 				}
 			});
+			
+			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
+			
+			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setEditable(false);
+			tf_disponible_sabado.setColumns(10);
+			
+			JLabel lblNewLabel = new JLabel("Disponible domingo:");
+			
+			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setEditable(false);
+			tf_disponible_domingo.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addContainerGap()
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-							.addComponent(btn_scary_movie, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btn_el_gran_lebowski, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btn_la_vida_de_brian, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(btn_aterriza_como_puedas, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(btn_aterriza_como_puedas, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(btn_scary_movie, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btn_el_gran_lebowski, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btn_la_vida_de_brian, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(lb_disponible_sabado, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+									.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+									.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+									.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
+								.addGap(24))
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(18)
-								.addComponent(lb_titulo_drama_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)))
-						.addContainerGap())
+								.addComponent(lb_titulo_drama_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(265, Short.MAX_VALUE))))
 			);
 			gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-					.addGroup(gl_contentPane.createSequentialGroup()
+				gl_contentPane.createParallelGroup(Alignment.TRAILING)
+					.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
 						.addContainerGap()
 						.addComponent(lb_titulo_drama_1, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
 						.addGap(35)
-						.addComponent(btn_scary_movie)
-						.addGap(18)
-						.addComponent(btn_el_gran_lebowski)
-						.addGap(18)
-						.addComponent(btn_la_vida_de_brian)
-						.addGap(18)
-						.addComponent(btn_aterriza_como_puedas)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(lb_disponible_sabado)
+								.addGap(6)
+								.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(7)
+								.addComponent(lblNewLabel)
+								.addGap(6)
+								.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_scary_movie)
+								.addGap(18)
+								.addComponent(btn_el_gran_lebowski)
+								.addGap(18)
+								.addComponent(btn_la_vida_de_brian)
+								.addGap(18)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+									.addComponent(btn_aterriza_como_puedas)
+									.addComponent(bt_generos))))
 						.addContainerGap(32, Short.MAX_VALUE))
-					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-						.addContainerGap(185, Short.MAX_VALUE)
-						.addComponent(bt_generos)
-						.addGap(43))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
@@ -396,6 +450,18 @@ public class Frame_Peliculas extends JFrame {
 					Frame_Generos.frame_pelis_terror.dispose();
 				}
 			});
+			
+			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
+			
+			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setEditable(false);
+			tf_disponible_sabado.setColumns(10);
+			
+			JLabel lblNewLabel = new JLabel("Disponible domingo:");
+			
+			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setEditable(false);
+			tf_disponible_domingo.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
 			gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -405,17 +471,25 @@ public class Frame_Peliculas extends JFrame {
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(18)
 								.addComponent(lb_titulo_drama_1_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))
-							.addComponent(btn_psicosis, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btn_el_resplandor, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addComponent(btn_dracula, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addComponent(btn_cisne_negro, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(btn_psicosis, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+									.addComponent(btn_el_resplandor, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(lb_disponible_sabado, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+									.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+									.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))))
 						.addContainerGap())
 			);
 			gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.TRAILING)
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addContainerGap()
 						.addComponent(lb_titulo_drama_1_1, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
@@ -427,9 +501,17 @@ public class Frame_Peliculas extends JFrame {
 						.addComponent(btn_dracula)
 						.addGap(18)
 						.addComponent(btn_cisne_negro)
-						.addContainerGap(42, Short.MAX_VALUE))
-					.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-						.addContainerGap(172, Short.MAX_VALUE)
+						.addContainerGap(32, Short.MAX_VALUE))
+					.addGroup(gl_contentPane.createSequentialGroup()
+						.addContainerGap(67, Short.MAX_VALUE)
+						.addComponent(lb_disponible_sabado)
+						.addGap(6)
+						.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGap(7)
+						.addComponent(lblNewLabel)
+						.addGap(6)
+						.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGap(18)
 						.addComponent(bt_generos)
 						.addGap(56))
 			);

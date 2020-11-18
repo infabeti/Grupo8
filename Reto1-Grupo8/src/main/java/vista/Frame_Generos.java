@@ -32,10 +32,10 @@ public class Frame_Generos {
 	public static JTextField tiempoSabado;
 	public static JTextField tiempoDomingo;
 	public static JTextArea peliculasVistasDomingo;
-	public static Frame_Peliculas frame_pelis_drama = new Frame_Peliculas("Drama");
-	public static Frame_Peliculas frame_pelis_comedia = new Frame_Peliculas("Comedia");
-	public static Frame_Peliculas frame_pelis_scifi = new Frame_Peliculas("Sci-Fi");
-	public static Frame_Peliculas frame_pelis_terror = new Frame_Peliculas("Terror");
+	public static Frame_Peliculas frame_pelis_drama;
+	public static Frame_Peliculas frame_pelis_comedia;
+	public static Frame_Peliculas frame_pelis_scifi;
+	public static Frame_Peliculas frame_pelis_terror;
 	public static Frame_Peliculas frame_pelis;
 	
 
@@ -80,6 +80,7 @@ public class Frame_Generos {
 		JButton btnDrama = new JButton("Drama");
 		btnDrama.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis_drama = new Frame_Peliculas("Drama");
 				frame_pelis_drama.setVisible(true);
 				frame_generos.setVisible(false);
 			}
@@ -92,6 +93,7 @@ public class Frame_Generos {
 		JButton btnComedia = new JButton("Comedia");
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis_comedia = new Frame_Peliculas("Comedia");
 				frame_pelis_comedia.setVisible(true);
 				frame_generos.setVisible(false);
 			}
@@ -102,6 +104,7 @@ public class Frame_Generos {
 		JButton btnTerror = new JButton("Terror");
 		btnTerror.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis_terror = new Frame_Peliculas("Terror");
 				frame_pelis_terror.setVisible(true);
 				frame_generos.setVisible(false);
 			}
@@ -112,6 +115,7 @@ public class Frame_Generos {
 		JButton btnCienciaFiccion = new JButton("Ciencia Ficcion");
 		btnCienciaFiccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame_pelis_scifi = new Frame_Peliculas("Sci-Fi");
 				frame_pelis_scifi.setVisible(true);
 				frame_generos.setVisible(false);
 			}
@@ -171,23 +175,23 @@ public class Frame_Generos {
 		mensajePeliculasDomingo.setBounds(411, 45, 204, 23);
 		frame_generos.getContentPane().add(mensajePeliculasDomingo);
 		
-		JButton btnNewButton = new JButton("Limpiar lista");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_limpiar_sabado = new JButton("Limpiar lista");
+		btn_limpiar_sabado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Funciones_Generos.limpiarLista("sabado");
 			}
 		});
-		btnNewButton.setBounds(166, 169, 216, 23);
-		frame_generos.getContentPane().add(btnNewButton);
+		btn_limpiar_sabado.setBounds(166, 169, 216, 23);
+		frame_generos.getContentPane().add(btn_limpiar_sabado);
 		
-		JButton btnNewButton_1 = new JButton("Limpiar lista");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btn_limpiar_domingo = new JButton("Limpiar lista");
+		btn_limpiar_domingo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Funciones_Generos.limpiarLista("domingo");
 			}
 		});
-		btnNewButton_1.setBounds(400, 169, 216, 23);
-		frame_generos.getContentPane().add(btnNewButton_1);
+		btn_limpiar_domingo.setBounds(400, 169, 216, 23);
+		frame_generos.getContentPane().add(btn_limpiar_domingo);
 	}
 	
 }
