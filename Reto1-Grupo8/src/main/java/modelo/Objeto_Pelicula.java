@@ -77,21 +77,15 @@ public class Objeto_Pelicula {
 	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+
 	public String getGenero() {
 		return genero;
 	}
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
+
 	public int getDuracion() {
 		return duracion;
 	}
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
-	}
+
 	public Objeto_Pelicula(String nombre, String genero, int duracion) {
 		super();
 		this.nombre = nombre;
