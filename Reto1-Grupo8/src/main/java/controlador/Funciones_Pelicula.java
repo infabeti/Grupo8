@@ -47,7 +47,13 @@ public class Funciones_Pelicula {
 //	}
 	public static boolean genero_sabado_repetido;
 	public static boolean genero_domingo_repetido; //Saco estas variables puesto que necesito que sean de alcance público para evaluarlas
+	
+	
+	
 	public static void addPeli(Objeto_Pelicula added_peli, JFrame frame_pelis) {
+		Frame_Generos.lb_seleccione_otro_genero.setVisible(false);
+		Frame_Generos.lb_genero_repetido.setVisible(false); //Las inicializamos a false y ya se mostrarán si se repite el género
+		
 		//Manejando el Array
 		if(!Funciones_Generos.totales_seleccionadas.isEmpty()) {
 				if(Funciones_Generos.getDisponible_sabado()>=added_peli.getDuracion()) { // SI LA PELÍCULA CABE EN EL SÁBADO
@@ -59,6 +65,8 @@ public class Funciones_Pelicula {
 							////////////////////////////////////////////////////////7
 							System.out.println("Ya hay una película de "+added_peli.getGenero()+" el sábado. No puedes seleccionar otra");
 							Frame_Generos.frame_generos.setVisible(true);
+							Frame_Generos.lb_genero_repetido.setVisible(true);
+							Frame_Generos.lb_seleccione_otro_genero.setVisible(true);
 							frame_pelis.dispose();
 						}
 					}
@@ -76,6 +84,8 @@ public class Funciones_Pelicula {
 								genero_domingo_repetido = true;
 								////////////////////////////////////////////////////////7
 								System.out.println("Ya hay una película de "+added_peli.getGenero()+" el domingo. No puedes seleccionar otra");
+								Frame_Generos.lb_genero_repetido.setVisible(true);
+								Frame_Generos.lb_seleccione_otro_genero.setVisible(true);
 								Frame_Generos.frame_generos.setVisible(true);
 								frame_pelis.dispose();
 							}

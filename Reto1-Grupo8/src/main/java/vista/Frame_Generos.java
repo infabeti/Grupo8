@@ -24,6 +24,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DropMode;
+import javax.swing.border.LineBorder;
 
 public class Frame_Generos {
 
@@ -37,8 +38,9 @@ public class Frame_Generos {
 	public static Frame_Peliculas frame_pelis_scifi;
 	public static Frame_Peliculas frame_pelis_terror;
 	public static Frame_Peliculas frame_pelis;
+	public static JLabel lb_genero_repetido;
+	public static JLabel lb_seleccione_otro_genero;
 	
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -192,6 +194,23 @@ public class Frame_Generos {
 		});
 		btn_limpiar_domingo.setBounds(400, 169, 216, 23);
 		frame_generos.getContentPane().add(btn_limpiar_domingo);
+		
+		lb_genero_repetido = new JLabel("G\u00E9nero repetido,");
+		lb_genero_repetido.setVisible(false);
+		lb_genero_repetido.setForeground(Color.RED);
+		lb_genero_repetido.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lb_genero_repetido.setBounds(104, 203, 141, 23);
+		frame_generos.getContentPane().add(lb_genero_repetido);
+		
+		lb_seleccione_otro_genero = new JLabel("seleccione otro g\u00E9nero*");
+		lb_seleccione_otro_genero.setBorder(new LineBorder(new Color(255, 0, 0), 1, true));
+		lb_seleccione_otro_genero.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_seleccione_otro_genero.setVerticalTextPosition(SwingConstants.BOTTOM);
+		lb_seleccione_otro_genero.setVisible(false);
+		lb_seleccione_otro_genero.setForeground(Color.RED);
+		lb_seleccione_otro_genero.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lb_seleccione_otro_genero.setBounds(104, 203, 141, 44);
+		frame_generos.getContentPane().add(lb_seleccione_otro_genero);
 	}
 	
 }
