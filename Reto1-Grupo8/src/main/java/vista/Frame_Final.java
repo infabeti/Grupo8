@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 
 public class Frame_Final {
 
-	private JFrame frame;
+	public static  JFrame frame_final;
 
 	/**
 	 * Launch the application.
@@ -20,7 +20,7 @@ public class Frame_Final {
 			public void run() {
 				try {
 					Frame_Final window = new Frame_Final();
-					window.frame.setVisible(true);
+					window.frame_final.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,30 +39,31 @@ public class Frame_Final {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 453, 192);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame_final = new JFrame();
+		frame_final.setBounds(100, 100, 453, 192);
+		frame_final.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame_final.getContentPane().setLayout(null);
+	
 		
 		JLabel lblDespedida = new JLabel("Gracias por su visita");
 		lblDespedida.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblDespedida.setBounds(10, 11, 417, 32);
 		lblDespedida.setFont(new Font("Arial Black", Font.BOLD, 34));
-		frame.getContentPane().add(lblDespedida);
+		frame_final.getContentPane().add(lblDespedida);
 		
 		JLabel lblEsperemosQueVuelva = new JLabel("Esperemos que vuelva pronto");
 		lblEsperemosQueVuelva.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblEsperemosQueVuelva.setFont(new Font("Arial Black", Font.BOLD, 22));
 		lblEsperemosQueVuelva.setBounds(20, 54, 368, 32);
-		frame.getContentPane().add(lblEsperemosQueVuelva);
+		frame_final.getContentPane().add(lblEsperemosQueVuelva);
 		
 		JLabel autor1 = new JLabel("Markel Cuesta Arribas");
 		autor1.setBounds(74, 128, 176, 14);
-		frame.getContentPane().add(autor1);
+		frame_final.getContentPane().add(autor1);
 		
 		JLabel autor2 = new JLabel("Alberto Garcia Lopez");
 		autor2.setBounds(230, 128, 146, 14);
-		frame.getContentPane().add(autor2);
+		frame_final.getContentPane().add(autor2);
 	}
 
 }
