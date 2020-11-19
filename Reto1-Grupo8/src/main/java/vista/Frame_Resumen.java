@@ -19,8 +19,6 @@ public class Frame_Resumen {
 	public static JFrame frame_Resumen;
 	private JTextField TiempoEmisionSabado;
 	private JTextField TiempoEmisionDomingo;
-	public static Frame_Final frame_fin = new Frame_Final();
-	public static Frame_Bienvenida frame_bienvenida=new Frame_Bienvenida();
 	/**
 	 * Launch the application.
 	 */
@@ -87,10 +85,12 @@ public class Frame_Resumen {
 		frame_Resumen.getContentPane().add(btnSalir);
 		btnSalir.addActionListener(new ActionListener() {
 			
+			@SuppressWarnings("static-access")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				Frame_Bienvenida frame_bienvenida=new Frame_Bienvenida();
 				frame_bienvenida.frmBienvenida.setVisible(true);
-				frame_Resumen.setVisible(false);
+				frame_Resumen.dispose();
 				
 			}
 		});
@@ -123,9 +123,11 @@ public class Frame_Resumen {
 		frame_Resumen.getContentPane().add(btnContinuar);
 		btnContinuar.addActionListener(new ActionListener() {
 			
+			@SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent arg0) {
+				Frame_Final frame_fin = new Frame_Final();
 				frame_fin.frame_final.setVisible(true);
-				frame_Resumen.setVisible(false);
+				frame_Resumen.dispose();
 				
 				
 			}
