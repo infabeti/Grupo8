@@ -18,6 +18,7 @@ import javax.swing.UIManager;
 
 import controlador.Funciones_Generos;
 import controlador.Funciones_Pelicula;
+import controlador.Funciones_Resumen;
 
 import java.awt.SystemColor;
 import java.awt.Color;
@@ -76,7 +77,7 @@ public class Frame_Generos {
 				
 			}
 		});
-		btnSalir.setBounds(10, 227, 69, 23);
+		btnSalir.setBounds(10, 228, 69, 23);
 		frame_generos.getContentPane().add(btnSalir);
 		
 		JButton btnDrama = new JButton("Drama");
@@ -132,12 +133,12 @@ public class Frame_Generos {
 		
 		JLabel mensajeTiempoSabado = new JLabel("Tiempo restante sabado:");
 		mensajeTiempoSabado.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD | Font.ITALIC, 15));
-		mensajeTiempoSabado.setBounds(264, 203, 173, 19);
+		mensajeTiempoSabado.setBounds(136, 203, 173, 19);
 		frame_generos.getContentPane().add(mensajeTiempoSabado);
 		
 		JLabel mensajeTiempoDomingo = new JLabel("Tiempo restante domingo:");
 		mensajeTiempoDomingo.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD | Font.ITALIC, 15));
-		mensajeTiempoDomingo.setBounds(255, 226, 186, 19);
+		mensajeTiempoDomingo.setBounds(127, 226, 186, 19);
 		frame_generos.getContentPane().add(mensajeTiempoDomingo);
 		
 		peliculasVistasSabado = new JTextArea();
@@ -155,14 +156,14 @@ public class Frame_Generos {
 		tiempoSabado = new JTextField();
 		tiempoSabado.setText(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_SABADO));
 		tiempoSabado.setEditable(false);
-		tiempoSabado.setBounds(477, 203, 131, 20);
+		tiempoSabado.setBounds(349, 203, 131, 20);
 		frame_generos.getContentPane().add(tiempoSabado);
 		tiempoSabado.setColumns(10);
 		
 		tiempoDomingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_DOMINGO));
 		tiempoDomingo.setEditable(false);
 		tiempoDomingo.setColumns(10);
-		tiempoDomingo.setBounds(477, 228, 131, 20);
+		tiempoDomingo.setBounds(349, 228, 131, 20);
 		frame_generos.getContentPane().add(tiempoDomingo);
 		
 		peliculasVistasDomingo = new JTextArea();
@@ -199,7 +200,7 @@ public class Frame_Generos {
 		lb_genero_repetido.setVisible(false);
 		lb_genero_repetido.setForeground(Color.RED);
 		lb_genero_repetido.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lb_genero_repetido.setBounds(104, 203, 141, 23);
+		lb_genero_repetido.setBounds(10, 11, 141, 23);
 		frame_generos.getContentPane().add(lb_genero_repetido);
 		
 		lb_seleccione_otro_genero = new JLabel("seleccione otro g\u00E9nero*");
@@ -209,8 +210,19 @@ public class Frame_Generos {
 		lb_seleccione_otro_genero.setVisible(false);
 		lb_seleccione_otro_genero.setForeground(Color.RED);
 		lb_seleccione_otro_genero.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lb_seleccione_otro_genero.setBounds(104, 203, 141, 44);
+		lb_seleccione_otro_genero.setBounds(10, 11, 141, 44);
 		frame_generos.getContentPane().add(lb_seleccione_otro_genero);
+		
+		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Frame_Resumen().frame_Resumen.setVisible(true);
+				Funciones_Resumen.escribirResumen();
+				frame_generos.setVisible(false);
+				
+			}
+		});
+		btn_confirmar.setBounds(520, 227, 96, 23);
+		frame_generos.getContentPane().add(btn_confirmar);
 	}
-	
 }
