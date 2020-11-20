@@ -29,9 +29,7 @@ public class Frame_Bienvenida {
 
 	public Frame_Bienvenida() {
 		initialize();
-		Funciones_Bienvenida.pasar_a_login();
-		
-		
+		Funciones_Bienvenida.pasar_ventana(frmBienvenida);	
 	}
 	
 

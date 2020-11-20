@@ -14,6 +14,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+import controlador.Funciones_Generos;
+
 public class Frame_Resumen {
 
 	public static JFrame frame_Resumen;
@@ -133,6 +135,9 @@ public class Frame_Resumen {
 			
 			@SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent arg0) {
+				Funciones_Generos.limpiarLista("sabado");
+				Funciones_Generos.limpiarLista("domingo");
+				
 				Frame_Final frame_fin = new Frame_Final();
 				frame_fin.frame_final.setVisible(true);
 				frame_Resumen.dispose();

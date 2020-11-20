@@ -11,7 +11,7 @@ class TestFunciones_Bienvenida {
 	@Test
 	public void testBienvenida() {
 		resultado = true;
-		Funciones_Bienvenida.pasar_a_login();
+		Funciones_Bienvenida.pasar_ventana();
 		
 		org.junit.Assert.assertEquals(resultado, Funciones_Bienvenida.iniciar_login);
 	}

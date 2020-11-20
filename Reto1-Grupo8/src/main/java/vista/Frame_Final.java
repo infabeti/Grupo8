@@ -8,6 +8,8 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+import controlador.Funciones_Bienvenida;
+
 public class Frame_Final {
 
 	public static  JFrame frame_final;
@@ -64,6 +66,8 @@ public class Frame_Final {
 		JLabel autor2 = new JLabel("Alberto Garcia Lopez");
 		autor2.setBounds(230, 128, 146, 14);
 		frame_final.getContentPane().add(autor2);
+		
+		Funciones_Bienvenida.pasar_ventana(frame_final);
 	}
 
 }
