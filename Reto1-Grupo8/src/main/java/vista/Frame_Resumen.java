@@ -18,7 +18,6 @@ public class Frame_Resumen {
 
 	public static JFrame frame_Resumen;
 	public static JTextField TiempoEmisionSabado, TiempoEmisionDomingo;
-	  
 	public static JTextArea peliculasVistasDomingo, peliculasVistasSabado;
 	/**
 	 * Launch the application.
@@ -89,10 +88,8 @@ public class Frame_Resumen {
 			@SuppressWarnings("static-access")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Frame_Bienvenida frame_bienvenida=new Frame_Bienvenida();
-				frame_bienvenida.frmBienvenida.setVisible(true);
-				frame_Resumen.dispose();
-				
+				new Frame_Confirmar_Salida().frame.setVisible(true);
+
 			}
 		});
 		

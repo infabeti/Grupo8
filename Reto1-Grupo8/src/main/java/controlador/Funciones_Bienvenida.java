@@ -13,7 +13,6 @@ public class Funciones_Bienvenida {
 	 * @wbp.parser.entryPoint
 	 */
 	public static void pasar_a_login() {
-		System.out.println("el método funciona");
 		//temporizador para cambiar de ventana
 				tiempo = new Timer(5000,null);
 				tiempo.start();
@@ -22,7 +21,6 @@ public class Funciones_Bienvenida {
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
 						iniciar_login = true;
 
-						System.out.println("action performed funciona");
 						metodoTimer();
 					}
 					

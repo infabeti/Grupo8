@@ -63,7 +63,6 @@ public class Funciones_Pelicula {
 						if(peli.getGenero().equals(added_peli.getGenero())) {
 							genero_sabado_repetido = true;
 							////////////////////////////////////////////////////////7
-							System.out.println("Ya hay una película de "+added_peli.getGenero()+" el sábado. No puedes seleccionar otra");
 							Frame_Generos.frame_generos.setVisible(true);
 							Frame_Generos.lb_genero_repetido.setVisible(true);
 							Frame_Generos.lb_seleccione_otro_genero.setVisible(true);
@@ -83,7 +82,6 @@ public class Funciones_Pelicula {
 							if(peli.getGenero().equals(added_peli.getGenero())) {
 								genero_domingo_repetido = true;
 								////////////////////////////////////////////////////////7
-								System.out.println("Ya hay una película de "+added_peli.getGenero()+" el domingo. No puedes seleccionar otra");
 								Frame_Generos.lb_genero_repetido.setVisible(true);
 								Frame_Generos.lb_seleccione_otro_genero.setVisible(true);
 								Frame_Generos.frame_generos.setVisible(true);

@@ -71,10 +71,7 @@ public class Frame_Generos {
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame_generos.dispose();
-				Frame_Bienvenida bienvenida=new Frame_Bienvenida();
-				bienvenida.frmBienvenida.setVisible(true);
-				
+				new Frame_Confirmar_Salida().frame.setVisible(true);
 			}
 		});
 		btnSalir.setBounds(10, 228, 69, 23);
