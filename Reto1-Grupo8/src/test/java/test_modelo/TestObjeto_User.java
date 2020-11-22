@@ -25,7 +25,7 @@ public class TestObjeto_User {
 	@Test
 	public void testGetUser() {
 		user = "admin";
-		administrador= new Objeto_User("admin","admin");		
+		administrador= new Objeto_User(user,null);		
 		String resultado = administrador.getUser();
 		assertEquals(null, user, resultado);
 	}
