@@ -23,6 +23,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import javax.swing.UIManager;
+import java.awt.ComponentOrientation;
 
 public class Frame_Login extends JFrame {
 	private static JLabel label_usuario_no_existe,label_password_incorrecta;
@@ -99,27 +102,43 @@ public class Frame_Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Frame_Login() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 559, 370);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("Inicia Sesi\u00F3n");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBackground(new Color(255, 140, 0));
+		lblNewLabel.setToolTipText("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
 		jtf_usuario = new JTextField();
+		jtf_usuario.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 		jtf_usuario.setColumns(10);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setForeground(new Color(0, 0, 0));
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		lblContrasea.setForeground(new Color(0, 0, 0));
+		lblContrasea.setBackground(new Color(0, 0, 0));
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
 		jtf_password = new JPasswordField();
+		jtf_password.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setBackground(new Color(255, 140, 0));
 		btnEntrar.setAction(boton_entrar);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -139,49 +158,52 @@ public class Frame_Login extends JFrame {
 		label_password_incorrecta.setVisible(false);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(196)
+					.addComponent(btnEntrar, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(260, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(83)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblUsuario)
-						.addComponent(lblContrasea, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(lblContrasea, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+							.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+							.addGap(111))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(2)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(jtf_password)
-								.addComponent(jtf_usuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(jtf_usuario, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(label_password_incorrecta, Alignment.TRAILING)
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addComponent(label_usuario_no_existe)
-									.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE))))
-						.addComponent(lblNewLabel))
+									.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)))))
 					.addGap(126))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(196)
-					.addComponent(btnEntrar)
-					.addContainerGap(266, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(31)
-					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 76, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
+					.addContainerGap(55, Short.MAX_VALUE)
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+					.addGap(36)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(jtf_usuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jtf_usuario, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblUsuario)
 						.addComponent(label_usuario_no_existe))
-					.addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+					.addGap(24)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblContrasea)
-						.addComponent(jtf_password, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jtf_password, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 						.addComponent(label_password_incorrecta))
-					.addGap(33)
-					.addComponent(btnEntrar)
-					.addGap(64))
+					.addGap(35)
+					.addComponent(btnEntrar, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addGap(54))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}

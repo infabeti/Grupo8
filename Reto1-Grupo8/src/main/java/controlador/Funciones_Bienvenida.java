@@ -51,8 +51,7 @@ public class Funciones_Bienvenida {
 				new Frame_Bienvenida().frmBienvenida.setVisible(true);
 			}
 			
-//			tiempo.stop();
-//			parar_timer = false;
+
 		}
 
 }

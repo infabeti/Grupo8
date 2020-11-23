@@ -36,8 +36,6 @@ public class Frame_Bienvenida {
 
 	private void initialize() {
 		frmBienvenida = new JFrame();
-		frmBienvenida.setLocationRelativeTo(null);
-		frmBienvenida.setAlwaysOnTop(true);
 		frmBienvenida.getContentPane().setBackground(Color.WHITE);
 		frmBienvenida.getContentPane().setLayout(null);
 		/*Mensaje de bienvenida*/
