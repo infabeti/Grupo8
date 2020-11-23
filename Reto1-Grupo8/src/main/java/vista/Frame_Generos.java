@@ -69,7 +69,9 @@ public class Frame_Generos {
 		frame_generos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame_generos.getContentPane().setLayout(null);
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBackground(new Color(0, 0, 0));
+		btnSalir.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnSalir.setForeground(new Color(255, 255, 255));
+		btnSalir.setBackground(new Color(255, 69, 0));
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Frame_Confirmar_Salida().frame.setVisible(true);
@@ -81,7 +83,6 @@ public class Frame_Generos {
 		JButton btnDrama = new JButton("Drama");
 		btnDrama.setForeground(new Color(255, 255, 255));
 		btnDrama.setBackground(new Color(255, 140, 0));
-		btnDrama.setBorderPainted(false);
 		btnDrama.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_drama = new Frame_Peliculas("Drama");
@@ -97,7 +98,6 @@ public class Frame_Generos {
 		JButton btnComedia = new JButton("Comedia");
 		btnComedia.setForeground(new Color(255, 248, 220));
 		btnComedia.setBackground(new Color(255, 140, 0));
-		btnComedia.setBorderPainted(false);
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_comedia = new Frame_Peliculas("Comedia");
@@ -138,7 +138,7 @@ public class Frame_Generos {
 		
 		JLabel mensajeGeneros = new JLabel("Seleccione el genero ");
 		mensajeGeneros.setFont(new Font("Arial Black", Font.BOLD, 22));
-		mensajeGeneros.setBounds(199, 11, 263, 29);
+		mensajeGeneros.setBounds(264, 11, 263, 29);
 		frame_generos.getContentPane().add(mensajeGeneros);
 		
 		JLabel mensajeTiempoSabado = new JLabel("Tiempo restante sabado:");
@@ -152,6 +152,7 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(mensajeTiempoDomingo);
 		
 		peliculasVistasSabado = new JTextArea();
+		peliculasVistasSabado.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 		peliculasVistasSabado.setEditable(false);
 		peliculasVistasSabado.setBackground(Color.WHITE);
 		peliculasVistasSabado.setBounds(166, 68, 216, 81);
@@ -182,6 +183,7 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(tiempoDomingo);
 		
 		peliculasVistasDomingo = new JTextArea();
+		peliculasVistasDomingo.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 		peliculasVistasDomingo.setEditable(false);
 		peliculasVistasDomingo.setColumns(10);
 		peliculasVistasDomingo.setBackground(Color.WHITE);
@@ -235,8 +237,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(lb_seleccione_otro_genero);
 		
 		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btn_confirmar.setForeground(new Color(255, 255, 255));
 		btn_confirmar.setBackground(new Color(255, 140, 0));
-		btn_confirmar.setBorderPainted(false);
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Frame_Resumen().frmResumen.setVisible(true);
