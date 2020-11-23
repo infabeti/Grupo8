@@ -72,10 +72,13 @@ public class Frame_Peliculas extends JFrame {
 		////////////////////////////////////////////////////////
 		//SI EL GÉNERO ES DRAMA
 		if(genero.equals("Drama")) {
-			JLabel lb_titulo_drama = new JLabel("Drama");
+			JLabel lb_titulo_drama = new JLabel("DRAMA");
 			lb_titulo_drama.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
 			JButton btn_handia = new JButton("Handia: 1h 56 min.");
+			btn_handia.setForeground(new Color(255, 255, 255));
+			btn_handia.setBorderPainted(false);
+			btn_handia.setBackground(new Color(255, 140, 0));
 			btn_handia.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0){
 					
@@ -84,6 +87,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_lista_sindler = new JButton("La lista de Schindler: 3 h 17 min.");
+			btn_lista_sindler.setForeground(new Color(255, 255, 255));
+			btn_lista_sindler.setBorderPainted(false);
+			btn_lista_sindler.setBackground(new Color(255, 140, 0));
 			btn_lista_sindler.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.lista_Schindler,Frame_Generos.frame_pelis_drama);
@@ -92,6 +98,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			btn_cadena_perpetua = new JButton("Cadena Perpetua: 2 h 22 min.");
+			btn_cadena_perpetua.setBorderPainted(false);
+			btn_cadena_perpetua.setBackground(new Color(255, 140, 0));
+			btn_cadena_perpetua.setForeground(new Color(255, 255, 255));
 			btn_cadena_perpetua.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.cadena_perpetua, Frame_Generos.frame_pelis_drama);
@@ -100,16 +109,21 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_million_dollar_baby = new JButton("Million Dollar Baby: 2 h 13 min.");
+			btn_million_dollar_baby.setForeground(new Color(255, 255, 255));
+			btn_million_dollar_baby.setBackground(new Color(255, 140, 0));
+			btn_million_dollar_baby.setBorderPainted(false);
 			btn_million_dollar_baby.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.mdb,Frame_Generos.frame_pelis_drama);
 				}
 			});
 			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setBorder(new LineBorder(new Color(255, 140, 0), 2, true));
 			tf_disponible_sabado.setEditable(false);
 			tf_disponible_sabado.setColumns(10);
 			
 			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_DOMINGO));
+			tf_disponible_domingo.setBorder(new LineBorder(new Color(255, 140, 0), 2, true));
 			tf_disponible_domingo.setEditable(false);
 			tf_disponible_domingo.setColumns(10);
 			
@@ -118,6 +132,9 @@ public class Frame_Peliculas extends JFrame {
 			JLabel lblNewLabel = new JLabel("Disponible domingo:");
 			
 			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.setForeground(new Color(255, 255, 255));
+			bt_generos.setBorderPainted(false);
+			bt_generos.setBackground(new Color(255, 69, 0));
 			bt_generos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Frame_Generos.frame_generos.setVisible(true);
@@ -199,10 +216,13 @@ public class Frame_Peliculas extends JFrame {
 		///////////////////////////////////////////////////////////////
 		//SI EL GÉNERO ES SCI-FI
 		if(genero.equals("Sci-Fi")) {
-			JLabel lb_titulo_scifi = new JLabel("Sci-Fi");
+			JLabel lb_titulo_scifi = new JLabel("SCI-FI");
 			lb_titulo_scifi.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
 			JButton btn_novia_frankenstein = new JButton("La novia de Frankenstein: 1 h 15 min.");
+			btn_novia_frankenstein.setForeground(new Color(255, 255, 255));
+			btn_novia_frankenstein.setBackground(new Color(255, 140, 0));
+			btn_novia_frankenstein.setBorderPainted(false);
 			btn_novia_frankenstein.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.novia_Frankenstein,Frame_Generos.frame_pelis_scifi);
@@ -211,6 +231,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_odisea_en_el_espacio = new JButton("2001: Odisea en el espacio 2 h 22 min.");
+			btn_odisea_en_el_espacio.setForeground(new Color(255, 255, 255));
+			btn_odisea_en_el_espacio.setBorderPainted(false);
+			btn_odisea_en_el_espacio.setBackground(new Color(255, 140, 0));
 			btn_odisea_en_el_espacio.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.space_odyssey, Frame_Generos.frame_pelis_scifi);
@@ -218,6 +241,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_el_planeta_de_los_simios = new JButton("El planeta de los simios: 1 h 55 min.");
+			btn_el_planeta_de_los_simios.setBackground(new Color(255, 140, 0));
+			btn_el_planeta_de_los_simios.setBorderPainted(false);
+			btn_el_planeta_de_los_simios.setForeground(new Color(255, 255, 255));
 			btn_el_planeta_de_los_simios.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.planeta_simios, Frame_Generos.frame_pelis_scifi);
@@ -226,12 +252,18 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_allien_el_octavo_pasajero = new JButton("Alien, el octavo pasajero: 1 h 57 min.");
+			btn_allien_el_octavo_pasajero.setBackground(new Color(255, 140, 0));
+			btn_allien_el_octavo_pasajero.setBorderPainted(false);
+			btn_allien_el_octavo_pasajero.setForeground(new Color(255, 255, 255));
 			btn_allien_el_octavo_pasajero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.alien, Frame_Generos.frame_pelis_scifi);
 				}
 			});
 			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.setForeground(new Color(255, 255, 255));
+			bt_generos.setBorderPainted(false);
+			bt_generos.setBackground(new Color(255, 69, 0));
 			bt_generos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Frame_Generos.frame_generos.setVisible(true);
@@ -244,10 +276,12 @@ public class Frame_Peliculas extends JFrame {
 			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
 			
 			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setBorder(new LineBorder(new Color(255, 140, 0), 2, true));
 			tf_disponible_domingo.setEditable(false);
 			tf_disponible_domingo.setColumns(10);
 			
 			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setBorder(new LineBorder(new Color(255, 140, 0), 2, true));
 			tf_disponible_sabado.setEditable(false);
 			tf_disponible_sabado.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
