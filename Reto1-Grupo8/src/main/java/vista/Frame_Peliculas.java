@@ -217,7 +217,7 @@ public class Frame_Peliculas extends JFrame {
 		
 		///////////////////////////////////////////////////////////////
 		//SI EL GÉNERO ES SCI-FI
-		//if(genero.equals("Sci-Fi")) {
+		if(genero.equals("Sci-Fi")) {
 			JLabel lb_titulo_scifi = new JLabel("SCI-FI");
 			lb_titulo_scifi.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
@@ -338,7 +338,7 @@ public class Frame_Peliculas extends JFrame {
 								.addContainerGap(32, Short.MAX_VALUE))))
 			);
 			contentPane.setLayout(gl_contentPane);
-		//}
+		}
 		//////////////////////////////////////////////
 		//SI EL GÉNERO ES COMEDIA
 		if(genero.equals("Comedia")) {
