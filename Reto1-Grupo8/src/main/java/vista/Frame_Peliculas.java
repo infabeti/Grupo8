@@ -21,6 +21,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class Frame_Peliculas extends JFrame {
 
@@ -60,6 +62,7 @@ public class Frame_Peliculas extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		///
@@ -302,10 +305,13 @@ public class Frame_Peliculas extends JFrame {
 		//////////////////////////////////////////////
 		//SI EL GÉNERO ES COMEDIA
 		if(genero.equals("Comedia")) {
-			JLabel lb_titulo_drama_1 = new JLabel("Comedia");
+			JLabel lb_titulo_drama_1 = new JLabel("COMEDIA");
 			lb_titulo_drama_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
 			JButton btn_el_gran_lebowski = new JButton("El gran Lebowsky: 1 h 59 min.");
+			btn_el_gran_lebowski.setBackground(new Color(255, 140, 0));
+			btn_el_gran_lebowski.setBorderPainted(false);
+			btn_el_gran_lebowski.setForeground(new Color(255, 255, 255));
 			btn_el_gran_lebowski.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.gran_lebowski, Frame_Generos.frame_pelis_comedia);
@@ -314,6 +320,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_scary_movie = new JButton("Scary movie: 1 h 30 min.");
+			btn_scary_movie.setForeground(new Color(255, 255, 255));
+			btn_scary_movie.setBorderPainted(false);
+			btn_scary_movie.setBackground(new Color(255, 140, 0));
 			btn_scary_movie.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.scary_movie, Frame_Generos.frame_pelis_comedia);
@@ -321,6 +330,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_la_vida_de_brian = new JButton("La vida de Brian: 1 h 34 min.");
+			btn_la_vida_de_brian.setForeground(new Color(255, 255, 255));
+			btn_la_vida_de_brian.setBorderPainted(false);
+			btn_la_vida_de_brian.setBackground(new Color(255, 140, 0));
 			btn_la_vida_de_brian.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.vida_brian, Frame_Generos.frame_pelis_comedia);
@@ -328,6 +340,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_aterriza_como_puedas = new JButton("Aterriza como puedas: 1 h 28 min.");
+			btn_aterriza_como_puedas.setBorderPainted(false);
+			btn_aterriza_como_puedas.setBackground(new Color(255, 140, 0));
+			btn_aterriza_como_puedas.setForeground(new Color(255, 255, 255));
 			btn_aterriza_como_puedas.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.aterriza_como_puedas, Frame_Generos.frame_pelis_comedia);
@@ -335,6 +350,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.setForeground(new Color(255, 255, 255));
+			bt_generos.setBackground(new Color(255, 69, 0));
+			bt_generos.setBorderPainted(false);
 			bt_generos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Frame_Generos.frame_generos.setVisible(true);
@@ -345,12 +363,16 @@ public class Frame_Peliculas extends JFrame {
 			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
 			
 			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setBackground(new Color(255, 255, 255));
+			tf_disponible_sabado.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 			tf_disponible_sabado.setEditable(false);
 			tf_disponible_sabado.setColumns(10);
 			
 			JLabel lblNewLabel = new JLabel("Disponible domingo:");
 			
 			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
+			tf_disponible_domingo.setBackground(new Color(255, 255, 255));
 			tf_disponible_domingo.setEditable(false);
 			tf_disponible_domingo.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -409,12 +431,15 @@ public class Frame_Peliculas extends JFrame {
 			contentPane.setLayout(gl_contentPane);
 		}
 		/////////////////////////////////////////////////////
-		//SI EL GÉNERO ES TERROR
+//		SI EL GÉNERO ES TERROR
 		if(genero.equals("Terror")) {
-			JLabel lb_titulo_drama_1_1 = new JLabel("Terror");
+			JLabel lb_titulo_drama_1_1 = new JLabel("TERROR");
 			lb_titulo_drama_1_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 			
 			JButton btn_psicosis = new JButton("Psicosis: 1 h 49 min.");
+			btn_psicosis.setBorderPainted(false);
+			btn_psicosis.setForeground(new Color(255, 255, 255));
+			btn_psicosis.setBackground(new Color(255, 140, 0));
 			btn_psicosis.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.psicosis, Frame_Generos.frame_pelis_terror);
@@ -423,6 +448,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_el_resplandor = new JButton("El resplandor: 2 h 26 min.");
+			btn_el_resplandor.setForeground(new Color(255, 255, 255));
+			btn_el_resplandor.setBackground(new Color(255, 140, 0));
+			btn_el_resplandor.setBorderPainted(false);
 			btn_el_resplandor.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.el_resplandor, Frame_Generos.frame_pelis_terror);
@@ -430,6 +458,9 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_dracula = new JButton("Dracula: 2 h 35 min.");
+			btn_dracula.setBorderPainted(false);
+			btn_dracula.setBackground(new Color(255, 140, 0));
+			btn_dracula.setForeground(new Color(255, 255, 255));
 			btn_dracula.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.dracula, Frame_Generos.frame_pelis_terror);
@@ -438,12 +469,18 @@ public class Frame_Peliculas extends JFrame {
 			});
 			
 			JButton btn_cisne_negro = new JButton("Cisne negro: 1 h 50 min.");
+			btn_cisne_negro.setForeground(new Color(255, 255, 255));
+			btn_cisne_negro.setBackground(new Color(255, 140, 0));
+			btn_cisne_negro.setBorderPainted(false);
 			btn_cisne_negro.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Funciones_Pelicula.addPeli(Objeto_Pelicula.cisne_negro, Frame_Generos.frame_pelis_terror);
 				}
 			});
 			JButton bt_generos = new JButton("Volver a g\u00E9neros");
+			bt_generos.setForeground(new Color(255, 255, 255));
+			bt_generos.setBorderPainted(false);
+			bt_generos.setBackground(new Color(255, 69, 0));
 			bt_generos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Frame_Generos.frame_generos.setVisible(true);
@@ -454,12 +491,16 @@ public class Frame_Peliculas extends JFrame {
 			JLabel lb_disponible_sabado = new JLabel("Disponible s\u00E1bado:");
 			
 			tf_disponible_sabado = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_sabado()));
+			tf_disponible_sabado.setBackground(new Color(255, 255, 255));
+			tf_disponible_sabado.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
 			tf_disponible_sabado.setEditable(false);
 			tf_disponible_sabado.setColumns(10);
 			
 			JLabel lblNewLabel = new JLabel("Disponible domingo:");
 			
 			tf_disponible_domingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.getDisponible_domingo()));
+			tf_disponible_domingo.setBorder(new LineBorder(new Color(255, 140, 0), 1, true));
+			tf_disponible_domingo.setBackground(new Color(255, 255, 255));
 			tf_disponible_domingo.setEditable(false);
 			tf_disponible_domingo.setColumns(10);
 			GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -473,10 +514,6 @@ public class Frame_Peliculas extends JFrame {
 								.addComponent(lb_titulo_drama_1_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))
 							.addComponent(btn_dracula, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(btn_cisne_negro, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
-							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 									.addComponent(btn_psicosis, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 									.addComponent(btn_el_resplandor, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
@@ -485,7 +522,11 @@ public class Frame_Peliculas extends JFrame {
 									.addComponent(lb_disponible_sabado, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addComponent(tf_disponible_sabado, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
 									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-									.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btn_cisne_negro, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+								.addComponent(bt_generos, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
 						.addContainerGap())
 			);
 			gl_contentPane.setVerticalGroup(
@@ -500,7 +541,9 @@ public class Frame_Peliculas extends JFrame {
 						.addGap(18)
 						.addComponent(btn_dracula)
 						.addGap(18)
-						.addComponent(btn_cisne_negro)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+							.addComponent(btn_cisne_negro)
+							.addComponent(bt_generos))
 						.addContainerGap(32, Short.MAX_VALUE))
 					.addGroup(gl_contentPane.createSequentialGroup()
 						.addContainerGap(67, Short.MAX_VALUE)
@@ -511,9 +554,7 @@ public class Frame_Peliculas extends JFrame {
 						.addComponent(lblNewLabel)
 						.addGap(6)
 						.addComponent(tf_disponible_domingo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGap(18)
-						.addComponent(bt_generos)
-						.addGap(56))
+						.addGap(97))
 			);
 			contentPane.setLayout(gl_contentPane);
 		}
