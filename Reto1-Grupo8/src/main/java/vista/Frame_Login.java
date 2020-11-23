@@ -103,6 +103,8 @@ public class Frame_Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Frame_Login() {
+		setTitle("Login");
+		setBackground(new Color(255, 255, 255));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 559, 370);

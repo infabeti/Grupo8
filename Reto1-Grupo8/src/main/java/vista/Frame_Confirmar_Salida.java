@@ -58,8 +58,8 @@ public class Frame_Confirmar_Salida {
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Frame_Generos.frame_generos.dispose();
-				if(Frame_Resumen.frame_Resumen != null)
-					Frame_Resumen.frame_Resumen.dispose();
+				if(Frame_Resumen.frmResumen != null)
+					Frame_Resumen.frmResumen.dispose();
 
 				Funciones_Generos.limpiarLista("sabado");
 				Funciones_Generos.limpiarLista("domingo");

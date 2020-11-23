@@ -239,7 +239,7 @@ public class Frame_Generos {
 		btn_confirmar.setBorderPainted(false);
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Frame_Resumen().frame_Resumen.setVisible(true);
+				new Frame_Resumen().frmResumen.setVisible(true);
 				Funciones_Resumen.escribirResumen();
 				frame_generos.setVisible(false);
 				
