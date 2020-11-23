@@ -29,7 +29,7 @@ public class Frame_Peliculas extends JFrame {
 	private String genero;
 	
 	
-	
+	//
 	
 
 	private JPanel contentPane;
