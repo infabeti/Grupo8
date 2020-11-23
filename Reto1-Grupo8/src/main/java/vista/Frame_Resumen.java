@@ -49,6 +49,8 @@ public class Frame_Resumen {
 	 */
 	private void initialize() {
 		frame_Resumen = new JFrame();
+		frame_Resumen.getContentPane().setBackground(new Color(255, 255, 255));
+		frame_Resumen.getContentPane().setEnabled(false);
 		frame_Resumen.setBounds(100, 100, 548, 309);
 		frame_Resumen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame_Resumen.getContentPane().setLayout(null);
@@ -83,6 +85,7 @@ public class Frame_Resumen {
 		frame_Resumen.getContentPane().add(lblResumen);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBackground(new Color(0, 0, 0));
 		btnSalir.setBounds(10, 246, 90, 23);
 		frame_Resumen.getContentPane().add(btnSalir);
 		btnSalir.addActionListener(new ActionListener() {
@@ -119,10 +122,16 @@ public class Frame_Resumen {
 		frame_Resumen.getContentPane().add(TiempoEmisionDomingo);
 		
 		JButton btnContinuar = new JButton("Continuar");
+		btnContinuar.setForeground(new Color(255, 255, 255));
+		btnContinuar.setBackground(new Color(255, 140, 0));
+		btnContinuar.setBorderPainted(false);
 		btnContinuar.setBounds(434, 246, 98, 23);
 		frame_Resumen.getContentPane().add(btnContinuar);
 		
 		JButton btn_volver = new JButton("Volver");
+		btn_volver.setForeground(new Color(255, 255, 255));
+		btn_volver.setBackground(new Color(255, 140, 0));
+		btn_volver.setBorderPainted(false);
 		btn_volver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Frame_Generos.frame_generos.setVisible(true);

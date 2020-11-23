@@ -64,11 +64,12 @@ public class Frame_Generos {
 	private void initialize() {
 		frame_generos = new JFrame();
 		frame_generos.setVisible(true);
-		frame_generos.getContentPane().setBackground(UIManager.getColor("Button.background"));
+		frame_generos.getContentPane().setBackground(new Color(255, 255, 255));
 		frame_generos.setBounds(100, 100, 655, 301);
 		frame_generos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame_generos.getContentPane().setLayout(null);
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBackground(new Color(0, 0, 0));
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Frame_Confirmar_Salida().frame.setVisible(true);
@@ -78,6 +79,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(btnSalir);
 		
 		JButton btnDrama = new JButton("Drama");
+		btnDrama.setForeground(new Color(255, 255, 255));
+		btnDrama.setBackground(new Color(255, 140, 0));
+		btnDrama.setBorderPainted(false);
 		btnDrama.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_drama = new Frame_Peliculas("Drama");
@@ -91,6 +95,9 @@ public class Frame_Generos {
 		//2 ideas, pasar el tiempo como parámetro de la ventana e incluirlo en la creación de la misma por género
 		//hacer una variable global 
 		JButton btnComedia = new JButton("Comedia");
+		btnComedia.setForeground(new Color(255, 248, 220));
+		btnComedia.setBackground(new Color(255, 140, 0));
+		btnComedia.setBorderPainted(false);
 		btnComedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_comedia = new Frame_Peliculas("Comedia");
@@ -102,6 +109,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(btnComedia);
 		
 		JButton btnTerror = new JButton("Terror");
+		btnTerror.setForeground(new Color(255, 255, 255));
+		btnTerror.setBackground(new Color(255, 140, 0));
+		btnTerror.setBorderPainted(false);
 		btnTerror.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_terror = new Frame_Peliculas("Terror");
@@ -113,6 +123,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(btnTerror);
 		
 		JButton btnCienciaFiccion = new JButton("Ciencia Ficcion");
+		btnCienciaFiccion.setForeground(new Color(255, 255, 255));
+		btnCienciaFiccion.setBackground(new Color(255, 140, 0));
+		btnCienciaFiccion.setBorderPainted(false);
 		btnCienciaFiccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame_pelis_scifi = new Frame_Peliculas("Sci-Fi");
@@ -151,6 +164,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(mensajePeliculasSabado);
 		
 		tiempoSabado = new JTextField();
+		tiempoSabado.setForeground(new Color(255, 255, 255));
+		tiempoSabado.setCaretColor(new Color(255, 255, 255));
+		tiempoSabado.setBackground(new Color(255, 140, 0));
 		tiempoSabado.setText(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_SABADO));
 		tiempoSabado.setEditable(false);
 		tiempoSabado.setBounds(349, 203, 131, 20);
@@ -158,6 +174,8 @@ public class Frame_Generos {
 		tiempoSabado.setColumns(10);
 		
 		tiempoDomingo = new JTextField(Funciones_Pelicula.secsToHours(Funciones_Generos.TIEMPO_TOTAL_DOMINGO));
+		tiempoDomingo.setForeground(new Color(255, 255, 255));
+		tiempoDomingo.setBackground(new Color(255, 140, 0));
 		tiempoDomingo.setEditable(false);
 		tiempoDomingo.setColumns(10);
 		tiempoDomingo.setBounds(349, 228, 131, 20);
@@ -176,6 +194,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(mensajePeliculasDomingo);
 		
 		JButton btn_limpiar_sabado = new JButton("Limpiar lista");
+		btn_limpiar_sabado.setForeground(new Color(255, 255, 255));
+		btn_limpiar_sabado.setBackground(new Color(255, 0, 0));
+		btn_limpiar_sabado.setBorderPainted(false);
 		btn_limpiar_sabado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Funciones_Generos.limpiarLista("sabado");
@@ -185,6 +206,9 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(btn_limpiar_sabado);
 		
 		JButton btn_limpiar_domingo = new JButton("Limpiar lista");
+		btn_limpiar_domingo.setBackground(new Color(255, 0, 0));
+		btn_limpiar_domingo.setBorderPainted(false);
+		btn_limpiar_domingo.setForeground(new Color(255, 255, 255));
 		btn_limpiar_domingo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Funciones_Generos.limpiarLista("domingo");
@@ -211,6 +235,8 @@ public class Frame_Generos {
 		frame_generos.getContentPane().add(lb_seleccione_otro_genero);
 		
 		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.setBackground(new Color(255, 140, 0));
+		btn_confirmar.setBorderPainted(false);
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Frame_Resumen().frame_Resumen.setVisible(true);

@@ -26,6 +26,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.UIManager;
 import java.awt.ComponentOrientation;
+import javax.swing.JCheckBox;
 
 public class Frame_Login extends JFrame {
 	private static JLabel label_usuario_no_existe,label_password_incorrecta;

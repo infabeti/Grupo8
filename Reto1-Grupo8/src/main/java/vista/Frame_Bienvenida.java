@@ -37,29 +37,38 @@ public class Frame_Bienvenida {
 	private void initialize() {
 		frmBienvenida = new JFrame();
 		frmBienvenida.getContentPane().setBackground(Color.WHITE);
+		frmBienvenida.setLocationRelativeTo(null);
+		frmBienvenida.setAlwaysOnTop(true);
+		frmBienvenida.getContentPane().setBackground(new Color(255, 102, 0));
 		frmBienvenida.getContentPane().setLayout(null);
 		/*Mensaje de bienvenida*/
 		JLabel mensajeBienvenida = new JLabel("BIENVENIDO");
+		mensajeBienvenida.setBackground(new Color(0, 0, 0));
+		mensajeBienvenida.setForeground(Color.WHITE);
 		mensajeBienvenida.setBounds(10, 47, 434, 32);
 		mensajeBienvenida.setHorizontalAlignment(SwingConstants.CENTER);
 		mensajeBienvenida.setFont(new Font("Arial Black", Font.BOLD, 42));
 		frmBienvenida.getContentPane().add(mensajeBienvenida);
 		
 		JLabel autor1 = new JLabel("Markel Cuesta Arribas");
+		autor1.setForeground(Color.WHITE);
 		autor1.setBounds(86, 314, 176, 14);
 		frmBienvenida.getContentPane().add(autor1);
 		
 		JLabel autor2 = new JLabel("Alberto Garcia Lopez");
+		autor2.setForeground(Color.WHITE);
 		autor2.setBounds(242, 314, 146, 14);
 		frmBienvenida.getContentPane().add(autor2);
 		
 		JLabel mensajeBienvenida_1 = new JLabel("SELECCION DE PELICULAS");
+		mensajeBienvenida_1.setForeground(Color.WHITE);
 		mensajeBienvenida_1.setHorizontalAlignment(SwingConstants.CENTER);
 		mensajeBienvenida_1.setFont(new Font("Arial Black", Font.BOLD, 22));
 		mensajeBienvenida_1.setBounds(10, 193, 434, 32);
 		frmBienvenida.getContentPane().add(mensajeBienvenida_1);
 		
 		JLabel mensajeBienvenida_1_1 = new JLabel("SOFTWARE ");
+		mensajeBienvenida_1_1.setForeground(Color.WHITE);
 		mensajeBienvenida_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		mensajeBienvenida_1_1.setFont(new Font("Arial Black", Font.BOLD, 22));
 		mensajeBienvenida_1_1.setBounds(10, 129, 434, 32);
